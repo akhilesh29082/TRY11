@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | WITHX Innovations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+
+body{
+  background:
+  radial-gradient(circle at top left,#dbeafe,transparent 35%),
+  radial-gradient(circle at top right,#e0f2fe,transparent 35%),
+  #f8fafc;
+}
+
+/* NAV premium */
+.top-navbar{position:fixed;top:0;left:0;width:100%;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:#0b0d10;color:#fff;z-index:3000}.nav-left,.nav-right{display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo-box{height:54px;min-width:76px;padding:8px 14px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.22)}.brand-logo-box img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:30px}.top-navbar a{color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:.25s}.top-navbar a:hover,.top-navbar a.active{color:#38bdf8}.ask-btn{padding:14px 26px;border:1px solid #8b5cf6;border-radius:999px;background:#111827}.ask-btn:hover{box-shadow:0 0 24px rgba(56,189,248,.24)}.menu-btn{display:none;background:none;border:none;color:#fff;font-size:30px}.mobile-menu{position:fixed;top:88px;left:0;width:100%;background:#0b0d10;display:none;flex-direction:column;z-index:5000}.mobile-menu a{padding:18px 24px;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600}.mobile-menu.show{display:flex}
+
+/* HERO premium */
+.hero{
+  padding-top:130px;
+  padding-bottom:60px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-title-wrap{
+  position:relative;
+  display:inline-block;
+  margin-bottom:15px;
+  z-index:1;
+}
+
+.contact-wave-canvas{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  width:350px;
+  height:120px;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.hero h1{
+  position:relative;
+  z-index:2;
+  font-size:3.5rem;
+  font-weight:700;
+  color:#0a1f44;
+  margin-bottom:0;
+}
+
+.hero p{
+  position:relative;
+  z-index:2;
+  color:#64748b;
+  font-size:1.1rem;
+}
+/* CONTAINER */
+.container{
+  width:100%;
+  max-width:1300px;
+  margin:auto;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:.9fr 1.0fr;
+  gap:60px;
+}
+/* GLASS CARD premium*/
+.card{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(25px);
+  padding:35px;
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* FORM premium */
+input,
+textarea{
+  width:100%;
+  padding:16px;
+  margin-top:12px;
+  border-radius:14px;
+  border:1px solid #e2e8f0;
+  background:#fff;
+  font-size:15px;
+  transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#38bdf8;
+  box-shadow:0 0 0 4px rgba(56,189,248,.15);
+}
+
+button{
+  margin-top:15px;
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  background:#38bdf8;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{background:#0284c7}
+
+/* CONTACT INFO */
+.info{margin:15px 0;font-size:1rem}
+
+/* CLICK CALL BUTTON */
+.call-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:#38bdf8;
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+}
+.call-btn:hover{background:#0284c7}
+
+/* WHATSAPP */
+.whatsapp-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:#25D366;
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+  margin-left:10px;
+}
+
+/* SOCIAL */
+.social a{
+  margin-right:10px;
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+}
+.social a:hover{color:#38bdf8}
+
+/* MAP */
+.map{
+  margin-top:50px;
+  width:100%;
+  height : 400px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+/* FLOATING BUTTONS */
+.float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
+}
+.float a{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:white;
+  text-decoration:none;
+  font-size:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.call{background:#38bdf8;}
+.whatsapp{background:#25D366;}
+
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2.5rem;}
+}
+@media(max-width:900px){
+  .top-navbar{height:auto;padding:18px 22px;flex-direction:row;align-items:center}
+  .nav-links,.ask-btn,.nav-right>a[href="about.html"]{display:none}
+  .menu-btn{display:block}
+  .nav-left,.nav-right{gap:18px}
+  .hero{padding-top:130px}
+  .footer-container{grid-template-columns:1fr}
+}
+
+/* PREMIUM CONTACT CARD */
+
+.contact-card h3{
+  font-size:1.8rem;
+  color:#0a1f44;
+  margin-bottom:10px;
+}
+
+.contact-text{
+  color:#64748b;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.contact-item{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:25px;
+}
+
+.icon-box{
+  min-width:55px;
+  height:55px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#e0f2fe,#bae6fd);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  color:#0284c7;
+}
+
+.contact-item h4{
+  margin-bottom:5px;
+  color:#0a1f44;
+  font-size:1rem;
+  font-weight:600;
+}
+
+.contact-item p{
+  color:#64748b;
+  line-height:1.6;
+}
+
+.action-buttons{
+  display:flex;
+  gap:12px;
+  margin-top:30px;
+}
+
+.action-buttons a{
+  flex:1;
+  text-align:center;
+}
+
+.call-btn,
+.whatsapp-btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:14px;
+  font-weight:600;
+  border-radius:14px;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.call-btn{
+  background:#0ea5e9;
+  color:white;
+}
+
+.call-btn:hover{
+  background:#0284c7;
+  transform:translateY(-3px);
+}
+
+.whatsapp-btn{
+  background:#22c55e;
+  color:white;
+  margin-left:0;
+}
+
+.whatsapp-btn:hover{
+  transform:translateY(-3px);
+}
+
+.social-icons{
+  display:flex;
+  gap:12px;
+  margin-top:30px;
+}
+
+.social-icons a{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  background:#f1f5f9;
+  color:#0a1f44;
+  font-size:18px;
+  transition:.3s;
+}
+
+.social-icons a:hover{
+  background:#38bdf8;
+  color:white;
+  transform:translateY(-3px);
+}
+.contact-banner{
+  text-align:center;
+  margin-top:100px;
+  margin-bottom:40px;
+}
+
+.contact-banner h2{
+  font-size:2.5rem;
+  color:#0a1f44;
+}
+
+.contact-banner p{
+  margin-top:15px;
+  color:#64748b;
+}
+.footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8% 25px;
+  margin-top:80px;
+  text-align:left;
+  border-top:1px solid rgba(255,255,255,.08);
+  position:relative;
+  z-index:2;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1.4fr;
+  gap:50px;
+}
+
+.footer-box h3{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:15px;
+  color:#fff;
+  letter-spacing:.3px;
+}
+
+.footer-box h4{
+  font-size:18px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+.footer-box p{
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.footer-links,
+.footer-contact{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a,
+.footer-contact a{
+  color:#cbd5e1;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:#38bdf8;
+  transform:translateX(4px);
+}
+
+.footer-contact span{
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+.social-links{
+  display:flex;
+  gap:12px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#1e293b;
+  font-weight:600;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+}
+
+.social-links a:hover{
+  transform:translateY(-3px);
+}
+
+.linkedin{color:#60a5fa !important;}
+.instagram{color:#fb7185 !important;}
+.youtube{color:#ff0000 !important;}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:40px auto 0;
+  padding-top:20px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#94a3b8;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .footer{
+    padding:50px 6% 22px;
+    margin-top:60px;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+}
+</style>
+</head>
+
+<body>
+<nav class="top-navbar">
+  <div class="nav-left">
+    <a class="brand" href="index.html" aria-label="WITHX Home">
+      <span class="brand-logo-box"><img src="https://i.ibb.co/5gCTxNtx/Whats-App-Image-2026-06-09-at-12-19-38-PM.jpg" alt="WITHX Logo"></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button id="menuBtn" class="menu-btn">☰</button>
+    <a class="ask-btn" href="contact.html">Ask WITHX</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu"><a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="products.html">Products</a>
+  <a href="research.html">Research</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a></div>
+
+<!-- HERO premium -->
+<div class="hero">
+    <div class="hero-title-wrap">
+      <canvas id="contactWaveCanvas" class="contact-wave-canvas"></canvas>
+      <h1>Contact Us</h1>
+    </div>
+    <p>Let's build something innovative together</p>
+</div>
+
+<div class="container">
+
+  <div class="grid">
+
+    <!-- FORM -->
+    <div class="card">
+      <h3>Send Message</h3>
+
+      <form action="https://formsubmit.co/withx.innovations@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Message from WITHX Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <!-- CONTACT INFO -->
+<div class="card contact-card">
+
+  <h3>Contact Information</h3>
+
+  <p class="contact-text">
+    We'd love to hear about your project, idea, or collaboration opportunity.
+  </p>
+
+  <div class="contact-item">
+    <div class="icon-box">
+      <i class="fas fa-location-dot"></i>
+    </div>
+
+    <div>
+      <h4>Office Address</h4>
+      <p>EDF MITAoE, Dehu Phata,<br>
+      Alandi (D), Pune, Maharashtra</p>
+    </div>
+  </div>
+
+  <div class="contact-item">
+    <div class="icon-box">
+      <i class="fas fa-phone"></i>
+    </div>
+
+    <div>
+      <h4>Phone</h4>
+      <p>+91 90679 36323</p>
+    </div>
+  </div>
+
+  <div class="contact-item">
+    <div class="icon-box">
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div>
+      <h4>Email</h4>
+      <p>withx.innovations@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <a href="tel:+919067936323" class="call-btn">
+      <i class="fas fa-phone"></i>
+      Call Now
+    </a>
+
+    <a href="https://wa.me/919067936323"
+       class="whatsapp-btn"
+       target="_blank">
+
+       <i class="fab fa-whatsapp"></i>
+       WhatsApp
+    </a>
+  </div>
+
+  <div class="social-icons">
+
+    <a href="https://www.linkedin.com/company/withx-innovations/"
+       target="_blank">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://www.instagram.com/withx.in?igsh=MWJuNDR4dmxiZDJh"
+       target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://youtube.com/@withxinnovation?si=sRdB0OaLzHoDtcV5"
+       target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+
+  </div>
+
+</div>
+
+
+</div> <!-- grid -->
+</div> <!-- container -->
+
+ <!-- MAP -->
+   <div class="map">
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.7499388364977!2d73.8919792!3d18.675214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c9000eac9117%3A0xd7fd686ff2f30062!2sWITHX%20innovation%20Private%20limited!5e0!3m2!1sen!2sin!4v1780552675306!5m2!1sen!2sin"
+    width="100%" 
+    height="500%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<div class="contact-banner">
+  <h2>Ready To Start Your Next Innovation?</h2>
+
+  <p>
+    Connect with WITHX Innovations and let's create impactful solutions together.
+  </p>
+
+</div>
+ 
+
+
+<!-- FLOAT BUTTONS -->
+<div class="float">
+  <a href="tel:+919067936323" class="call">📞</a>
+  <a href="https://wa.me/919067936323" class="whatsapp" target="_blank">💬</a>
+</div>
+
+
+
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>WITHX INNOVATIONS</h3>
+      <p>
+        WITHX Innovations Private Limited is an engineering-driven company
+        focused on research &amp; development, manufacturing solutions,
+        industrial design, product innovation and advanced technology development.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contact</h4>
+      <div class="footer-contact">
+        <span>📍 EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span>
+        <span>🏢 WITHX Innovations Pvt. Ltd.</span>
+
+        <a href="mailto:withx.innovations@gmail.com">
+          ✉ withx.innovations@gmail.com
+        </a>
+
+        <div class="social-links">
+          <a class="linkedin" href="https://www.linkedin.com/company/withx-innovations/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="instagram" href="https://www.instagram.com/withx.in" target="_blank" rel="noopener">Instagram</a>
+          <a class="youtube" href="https://youtube.com/@withxinnovation" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    ©️ 2026 WITHX Innovations Private Limited. All Rights Reserved.
+  </div>
+
+</footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+if(menuBtn && mobileMenu){
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('show'));
+  document.querySelectorAll('#mobileMenu a').forEach((link)=>link.addEventListener('click',()=>mobileMenu.classList.remove('show')));
+}
+</script>
+<script>
+// WITHX Premium Blue-Gold Particle Ribbon Wave (Small)
+(function(){
+  const canvas = document.getElementById("contactWaveCanvas");
+  if(!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let w, h, t = 0;
+
+  function resize(){
+    w = canvas.width = 350;
+    h = canvas.height = 120;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  function ribbon(color1, color2, phase, amp, thick, yShift){
+    const top = [];
+    const bottom = [];
+
+    for(let x = -20; x <= w + 20; x += 4){
+      const y = h / 2 + yShift +
+        Math.sin(x * 0.006 + t + phase) * (amp * 0.4) +
+        Math.sin(x * 0.013 + t * 0.7) * (22 * 0.4);
+
+      top.push({x, y});
+      bottom.push({
+        x,
+        y: y + (thick * 0.4) * Math.cos(x * 0.004 + t + phase)
+      });
+    }
+
+    ctx.beginPath();
+    top.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+    bottom.reverse().forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.closePath();
+
+    const grad = ctx.createLinearGradient(0, 0, w, 0);
+    grad.addColorStop(0, color1);
+    grad.addColorStop(0.35, color2);
+    grad.addColorStop(0.55, "rgba(255,255,255,0.45)");
+    grad.addColorStop(0.75, color2);
+    grad.addColorStop(1, color1);
+
+    ctx.fillStyle = grad;
+    ctx.fill();
+  }
+
+  function grain(){
+    for(let i = 0; i < 3000; i++){
+      ctx.fillStyle = Math.random() > 0.5 ? "rgba(255,255,255,0.26)" : "rgba(255,255,255,0.12)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 1, 1);
+    }
+  }
+
+  function animate(){
+    ctx.clearRect(0, 0, w, h);
+
+    ribbon("rgba(79,141,255,0.05)", "rgba(79,141,255,0.78)", 0, 55, 95, 0);
+    ribbon("rgba(255,215,106,0.05)", "rgba(255,195,65,0.72)", Math.PI, 48, 85, 6);
+
+    grain();
+    t += 0.01;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+</script>
+</body>
+</html>

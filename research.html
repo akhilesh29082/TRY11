@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research & Innovation | WITHX Innovations</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+
+:root{
+  --primary:#0b1e3a;
+  --accent:#38bdf8;
+  --accent-2:#22d3ee;
+  --text:#111827;
+  --muted:#64748b;
+  --bg:#f7fbff;
+  --bg-soft:#edf4fb;
+  --panel:rgba(255,255,255,.76);
+  --panel-border:rgba(10,31,68,.08);
+  --shadow:0 20px 60px rgba(10,31,68,.08);
+  --max:1280px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(180deg,#f8fbff 0%,#edf4fb 100%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(56,189,248,.10), transparent 18%),
+    radial-gradient(circle at 88% 16%, rgba(34,211,238,.08), transparent 18%),
+    linear-gradient(rgba(15,23,42,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,.03) 1px, transparent 1px);
+  background-size:auto, auto, 30px 30px, 30px 30px;
+  pointer-events:none;
+  z-index:0;
+}
+
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.18;
+  z-index:0;
+  animation:float 12s ease-in-out infinite;
+}
+.orb1{width:340px;height:340px;background:#93c5fd;top:6%;left:-4%;}
+.orb2{width:260px;height:260px;background:#7dd3fc;top:42%;right:-2%;animation-delay:2s;}
+.orb3{width:240px;height:240px;background:#bfdbfe;bottom:8%;left:40%;animation-delay:4s;}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) translateX(0)}
+  50%{transform:translateY(-20px) translateX(14px)}
+}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulseGlow{
+  0%,100%{opacity:.7;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.06)}
+}
+
+.blob-1{width:280px;height:280px;background:#7dd3fc;top:8%;left:-4%;}
+.blob-2{width:240px;height:240px;background:#93c5fd;top:45%;right:-4%;}
+.blob-3{width:220px;height:220px;background:#bfdbfe;bottom:8%;left:38%;}
+
+
+.top-navbar{position:fixed;top:0;left:0;width:100%;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:#0b0d10;color:#fff;z-index:3000}.nav-left,.nav-right{display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo-box{height:54px;min-width:76px;padding:8px 14px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.22)}.brand-logo-box img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:30px}.top-navbar a{color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:.25s}.top-navbar a:hover,.top-navbar a.active{color:#38bdf8}.ask-btn{padding:14px 26px;border:1px solid #8b5cf6;border-radius:999px;background:#111827}.ask-btn:hover{box-shadow:0 0 24px rgba(56,189,248,.24)}.menu-btn{display:none;background:none;border:none;color:#fff;font-size:30px}.mobile-menu{position:fixed;top:88px;left:0;width:100%;background:#0b0d10;display:none;flex-direction:column;z-index:5000}.mobile-menu a{padding:18px 24px;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600}.mobile-menu.show{display:flex}
+
+
+
+
+
+
+
+
+  
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:120px 20px 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-grid{
+  width:min(var(--max),100%);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-copy{
+  background:var(--panel);
+  border:1px solid var(--panel-border);
+  border-radius:30px;
+  padding:34px;
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);
+  transform:translateY(var(--heroShift,0px));
+  transition:transform .15s linear;
+}
+.hero-kicker{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(56,189,248,.12);
+  border:1px solid rgba(56,189,248,.22);
+  color:#0369a1;
+  font-size:.82rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(3rem,6vw,5.3rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:var(--primary);
+  max-width:8ch;
+  margin-bottom:16px;
+}
+.hero p{
+  color:var(--muted);
+  line-height:1.85;
+  font-size:1.08rem;
+  max-width:38rem;
+}
+.hero-metrics{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.metric{
+  background:rgba(255,255,255,.7);
+  border:1px solid var(--panel-border);
+  border-radius:18px;
+  padding:16px;
+}
+.metric b{display:block;color:var(--primary);margin-bottom:6px}
+.metric span{font-size:.92rem;color:var(--muted);line-height:1.6}
+
+.hero-visual{
+  position:relative;
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.visual-frame{
+  width:min(560px,100%);
+  aspect-ratio:1/1.02;
+  border-radius:34px;
+  background:linear-gradient(160deg, rgba(255,255,255,.86), rgba(226,232,240,.72));
+  border:1px solid rgba(10,31,68,.08);
+  box-shadow:0 30px 80px rgba(10,31,68,.12);
+  position:relative;
+  overflow:hidden;
+  transform:rotateY(-8deg) rotateX(6deg) translateZ(30px);
+  transition:transform .25s ease;
+}
+.visual-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(56,189,248,.18), transparent 32%);
+}
+.visual-ring,
+.visual-ring-2{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(56,189,248,.20);
+}
+.visual-ring{
+  width:320px;height:320px;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 22s linear infinite;
+}
+.visual-ring-2{
+  width:220px;height:220px;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 16s linear reverse infinite;
+}
+.core-node{
+  position:absolute;
+  top:50%;left:50%;
+  width:84px;height:84px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:linear-gradient(180deg, #38bdf8, #0ea5e9);
+  box-shadow:0 0 0 14px rgba(56,189,248,.12), 0 0 50px rgba(56,189,248,.28);
+  animation:pulseGlow 4s ease-in-out infinite;
+}
+.floating-chip{
+  position:absolute;
+  min-width:130px;
+  padding:12px 14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(10,31,68,.08);
+  box-shadow:0 16px 36px rgba(10,31,68,.08);
+  color:var(--primary);
+  font-weight:600;
+  pointer-events:none;
+  z-index:3;
+  transition:box-shadow .2s ease, border-color .2s ease, transform .2s ease;
+}
+.floating-chip.collide{
+  border-color:rgba(56,189,248,.7);
+  box-shadow:0 20px 48px rgba(56,189,248,.35), 0 0 0 4px rgba(56,189,248,.12);
+  transform:scale(1.03);
+}
+.chip-a{top:18%;left:12%}
+.chip-b{top:22%;left:66%}
+.chip-c{top:62%;left:16%}
+.chip-d{top:64%;left:64%}
+
+section{
+  width:min(var(--max),calc(100% - 40px));
+  margin:0 auto;
+  padding:92px 0;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  transform:translateY(55px);
+  transition:all .9s ease;
+}
+section.show{opacity:1;transform:translateY(0)}
+.title{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;color:var(--primary);margin-bottom:14px}
+.lead{color:var(--muted);line-height:1.9;max-width:760px}
+.glass{background:var(--panel);border:1px solid var(--panel-border);border-radius:28px;backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+
+.research-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  margin-top:28px;
+}
+.research-card{
+  padding:28px;
+  transition:.35s ease;
+}
+.research-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(56,189,248,.28);
+  box-shadow:0 24px 50px rgba(56,189,248,.10);
+}
+.research-card .icon{font-size:2rem;margin-bottom:14px}
+.research-card h3{color:var(--primary);margin-bottom:10px;font-size:1.2rem}
+.research-card p{color:var(--muted);line-height:1.8;font-size:.96rem}
+
+.tech-strip{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+}
+.tech-card{
+  padding:24px;
+  text-align:center;
+  transition:.3s ease;
+}
+.tech-card:hover{transform:translateY(-8px) scale(1.02)}
+.tech-card .icon{font-size:2.1rem;margin-bottom:12px}
+.tech-card h4{color:var(--primary);margin-bottom:8px}
+.tech-card p{color:var(--muted);line-height:1.7;font-size:.92rem}
+
+.innovation-layout{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:26px;
+  margin-top:28px;
+  align-items:stretch;
+}
+.innovation-main,
+.innovation-stack{display:grid;gap:22px}
+.innovation-card{
+  padding:26px;
+  display:grid;
+  gap:18px;
+  align-items:center;
+}
+.innovation-card.main{
+  grid-template-columns:.95fr 1.05fr;
+  min-height:100%;
+}
+.innovation-card.side{
+  grid-template-columns:.85fr 1.15fr;
+}
+.innovation-image{
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid rgba(10,31,68,.08);
+}
+.innovation-image img{width:100%;height:100%;object-fit:cover;display:block}
+.innovation-card.main .innovation-image{min-height:320px}
+.innovation-card.side .innovation-image{min-height:180px}
+.innovation-copy h3{color:var(--primary);margin-bottom:10px;font-size:1.3rem}
+.innovation-copy p{color:var(--muted);line-height:1.8}
+.tag{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.22);color:#0369a1;font-size:.82rem;margin-bottom:12px}
+
+.patent-timeline{
+  margin-top:26px;
+  display:grid;
+  gap:18px;
+}
+.patent-item{
+  display:grid;
+  grid-template-columns:1.2fr .9fr .45fr;
+  gap:20px;
+  align-items:center;
+  padding:24px 26px;
+}
+.patent-item h4{color:var(--primary);margin-bottom:8px;font-size:1.12rem}
+.patent-item p{color:var(--muted);line-height:1.75;font-size:.95rem}
+.status{
+  justify-self:end;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.82rem;
+}
+.status.filed{background:#dbeafe;color:#1d4ed8}
+.status.published{background:#cffafe;color:#155e75}
+.status.approved{background:#dcfce7;color:#166534}
+
+.cta-panel{
+  padding:38px;
+  text-align:center;
+  background:linear-gradient(180deg, rgba(56,189,248,.12), rgba(34,211,238,.08));
+}
+.btn{
+  padding:14px 24px;
+  border:none;
+  border-radius:16px;
+  background:linear-gradient(180deg,var(--accent),#0284c7);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(56,189,248,.25);
+}
+.btn:hover{transform:translateY(-2px) scale(1.02)}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+
+.footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8% 25px;
+  margin-top:80px;
+  text-align:left;
+  border-top:1px solid rgba(255,255,255,.08);
+  position:relative;
+  z-index:2;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1.4fr;
+  gap:50px;
+}
+
+.footer-box h3{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:15px;
+  color:#fff;
+  letter-spacing:.3px;
+}
+
+.footer-box h4{
+  font-size:18px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+.footer-box p{
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.footer-links,
+.footer-contact{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a,
+.footer-contact a{
+  color:#cbd5e1;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:#38bdf8;
+  transform:translateX(4px);
+}
+
+.footer-contact span{
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+.social-links{
+  display:flex;
+  gap:12px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#1e293b;
+  font-weight:600;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+}
+
+.social-links a:hover{
+  transform:translateY(-3px);
+}
+
+.linkedin{color:#60a5fa !important;}
+.instagram{color:#fb7185 !important;}
+.youtube{color:#f87171 !important;}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:40px auto 0;
+  padding-top:20px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#94a3b8;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .footer{
+    padding:50px 6% 22px;
+    margin-top:60px;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+}
+
+@media (max-width: 980px){
+  .hero-grid,
+  .innovation-layout,
+  .innovation-card.main,
+  .innovation-card.side{grid-template-columns:1fr}
+  .hero-copy{text-align:center}
+  .hero h1{max-width:none}
+  .hero-metrics,
+  .research-grid,
+  .tech-strip{grid-template-columns:1fr 1fr}
+  .patent-item{grid-template-columns:1fr;gap:12px}
+  .status{justify-self:start}
+  .visual-frame{transform:none}
+}
+
+@media(max-width:900px){
+  .top-navbar{height:auto;padding:18px 22px;flex-direction:row;align-items:center}
+  .nav-links,.ask-btn,.nav-right>a[href="about.html"]{display:none}
+  .menu-btn{display:block}
+  .nav-left,.nav-right{gap:18px}
+  .hero{padding-top:130px}
+  .footer-container{grid-template-columns:1fr}
+}
+
+@media (max-width: 720px){
+  .hero{padding-top:150px}
+  .hero-copy,.research-card,.tech-card,.innovation-card,.patent-item,.cta-panel{padding:22px 18px}
+  section{width:min(var(--max),calc(100% - 24px));padding:72px 0}
+  .hero-metrics,
+  .research-grid,
+  .tech-strip{grid-template-columns:1fr}
+  .floating-chip{min-width:auto;font-size:0.85rem;padding:8px 12px}
+}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<nav class="top-navbar">
+  <div class="nav-left">
+    <a class="brand" href="index.html" aria-label="WITHX Home">
+      <span class="brand-logo-box"><img src="https://i.ibb.co/5gCTxNtx/Whats-App-Image-2026-06-09-at-12-19-38-PM.jpg" alt="WITHX Logo"></span>
+     
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button id="menuBtn" class="menu-btn">☰</button>
+    <a class="ask-btn" href="contact.html">Ask WITHX</a>
+    
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="products.html">Products</a>
+  <a href="research.html">Research</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-copy" id="heroCopy">
+      <div class="hero-kicker">WITHX Research Lab</div>
+      <h1>Research & Innovation</h1>
+      <p>Driving the Future Through Engineering and Technology</p>
+      <div class="hero-metrics">
+        <div class="metric"><b>Research Areas</b><span>Innovation paths shaped by engineering logic and experimentation.</span></div>
+        <div class="metric"><b>Technology Stack</b><span>Modern tools and systems supporting practical development.</span></div>
+        <div class="metric"><b>Patent Thinking</b><span>Original concepts designed with future value and protection in mind.</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="visual-frame" id="visualFrame">
+        <div class="visual-ring"></div>
+        <div class="visual-ring-2"></div>
+        <div class="core-node"></div>
+        <div class="floating-chip chip-a">Automation</div>
+        <div class="floating-chip chip-b">Robotics</div>
+        <div class="floating-chip chip-c">Embedded Systems</div>
+        <div class="floating-chip chip-d">IoT Sensors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research-areas">
+  <div class="title">Research Areas</div>
+  <p class="lead">A structured research approach focused on high-value engineering directions with practical future applications.</p>
+  <div class="research-grid">
+    <div class="research-card glass">
+      <div class="icon">⚙️</div>
+      <h3>Automation</h3>
+      <p>Research focused on improving processes, reducing manual dependency, and building more efficient engineering systems.</p>
+    </div>
+    <div class="research-card glass">
+      <div class="icon">🤖</div>
+      <h3>Robotics</h3>
+      <p>Exploration of smart machine-assisted concepts designed to support productivity, safety, and intelligent operation.</p>
+    </div>
+    <div class="research-card glass">
+      <div class="icon">🌱</div>
+      <h3>Sustainable Engineering</h3>
+      <p>Innovation paths that aim to reduce waste, improve efficiency, and create more responsible engineering solutions.</p>
+    </div>
+    <div class="research-card glass">
+      <div class="icon">📡</div>
+      <h3>IoT Systems</h3>
+      <p>Connected product ideas and smart sensing systems built for monitoring, communication, and future-ready functionality.</p>
+    </div>
+    <div class="research-card glass">
+      <div class="icon">🧠</div>
+      <h3>Smart Safety Systems</h3>
+      <p>Research into safety-oriented concepts that improve response, protection, and real-world reliability.</p>
+    </div>
+    <div class="research-card glass">
+      <div class="icon">🧪</div>
+      <h3>Prototype Validation</h3>
+      <p>Testing and iteration processes that support concept refinement and stronger engineering confidence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="technologies">
+  <div class="title">Technologies Used</div>
+  <p class="lead">Core technologies supporting research, prototyping, system integration, and innovation development.</p>
+  <div class="tech-strip">
+    <div class="tech-card glass">
+      <div class="icon">🔌</div>
+      <h4>Arduino</h4>
+      <p>Rapid experimentation and control-based prototyping for functional concept development.</p>
+    </div>
+    <div class="tech-card glass">
+      <div class="icon">📐</div>
+      <h4>CAD Design</h4>
+      <p>Precise engineering design workflows for parts, products, systems, and prototype-ready structures.</p>
+    </div>
+    <div class="tech-card glass">
+      <div class="icon">📡</div>
+      <h4>Sensors & IoT</h4>
+      <p>Connected sensing and data-based systems for monitoring, automation, and smart engineering applications.</p>
+    </div>
+    <div class="tech-card glass">
+      <div class="icon">💻</div>
+      <h4>Embedded Systems</h4>
+      <p>Hardware-software integration for control logic, functional intelligence, and system performance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="innovation-highlights">
+  <div class="title">Innovation Highlights</div>
+  <p class="lead">Selected innovation directions that reflect WITHX’s research mindset, system thinking, and future-focused engineering approach.</p>
+  <div class="innovation-layout">
+    <div class="innovation-main">
+      <div class="innovation-card main glass">
+        <div class="innovation-image">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="Smart engineering innovation">
+        </div>
+        <div class="innovation-copy">
+          <div class="tag">Smart System</div>
+          <h3>Connected Product Intelligence</h3>
+          <p>Research into systems that combine sensing, embedded logic, and engineering usability to create smarter products and more responsive real-world applications.</p>
+        </div>
+      </div>
+    </div>
+    <div class="innovation-stack">
+      <div class="innovation-card side glass">
+        <div class="innovation-image">
+          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=80" alt="Automation research">
+        </div>
+        <div class="innovation-copy">
+          <div class="tag">Automation</div>
+          <h3>Process Efficiency Concepts</h3>
+          <p>Innovation pathways that improve output, reduce effort, and strengthen engineering workflow performance.</p>
+        </div>
+      </div>
+      <div class="innovation-card side glass">
+        <div class="innovation-image">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Future design systems">
+        </div>
+        <div class="innovation-copy">
+          <div class="tag">AI-based</div>
+          <h3>Future-Aware System Design</h3>
+          <p>Concept development shaped around smarter decision support, adaptive systems, and forward-looking engineering logic.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="patents">
+  <div class="title">Patents</div>
+  <p class="lead">A minimal, structured view of patent-oriented innovation and intellectual property direction.</p>
+  <div class="patent-timeline">
+    <div class="patent-item glass">
+      <div>
+        <h4>Safety-Oriented Rescue System</h4>
+        <p>An innovation concept focused on engineering support for emergency response, protection, and user safety.</p>
+      </div>
+      <div>
+        <p>Developed as part of a broader effort to create meaningful safety-driven product systems with real-world relevance.</p>
+      </div>
+      <div class="status filed">Filed</div>
+    </div>
+    <div class="patent-item glass">
+      <div>
+        <h4>Smart Locking Product Concept</h4>
+        <p>A product idea built around improved daily-use security, convenience, and practical system functionality.</p>
+      </div>
+      <div>
+        <p>Structured to align innovation with protectable design thinking and scalable application potential.</p>
+      </div>
+      <div class="status published">Published</div>
+    </div>
+    <div class="patent-item glass">
+      <div>
+        <h4>Efficiency-Driven Mechanism Innovation</h4>
+        <p>An engineering mechanism concept aimed at improving workflow support, output consistency, and operational ease.</p>
+      </div>
+      <div>
+        <p>Represents WITHX’s broader research philosophy of building useful systems with future commercial and technical value.</p>
+      </div>
+      <div class="status approved">Approved</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>WITHX INNOVATIONS</h3>
+      <p>
+        WITHX Innovations Private Limited is an engineering-driven company
+        focused on research & development, manufacturing solutions,
+        industrial design, product innovation and advanced technology development.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contact</h4>
+      <div class="footer-contact">
+        <span>📍 EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span>
+        <span>🏢 WITHX Innovations Pvt. Ltd.</span>
+
+        <a href="mailto:withx.innovations@gmail.com">
+          ✉ withx.innovations@gmail.com
+        </a>
+
+        <div class="social-links">
+          <a class="linkedin" href="https://www.linkedin.com/company/withx-innovations/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="instagram" href="https://www.instagram.com/withx.in" target="_blank" rel="noopener">Instagram</a>
+          <a class="youtube" href="https://youtube.com/@withxinnovation" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    ©️ 2026 WITHX Innovations Private Limited. All Rights Reserved.
+  </div>
+
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.14 });
+sections.forEach((section) => observer.observe(section));
+
+const heroVisual = document.getElementById('heroVisual');
+const visualFrame = document.getElementById('visualFrame');
+if(heroVisual && visualFrame && window.innerWidth > 980){
+  heroVisual.addEventListener('mousemove', (event) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rx = ((y / rect.height) - 0.5) * -8;
+    const ry = ((x / rect.width) - 0.5) * 10;
+    visualFrame.style.transform = `rotateY(${ry}deg) rotateX(${rx}deg) translateZ(30px)`;
+  });
+  heroVisual.addEventListener('mouseleave', () => {
+    visualFrame.style.transform = 'rotateY(-8deg) rotateX(6deg) translateZ(30px)';
+  });
+}
+
+const parallaxTargets = document.querySelectorAll('.orb');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  parallaxTargets.forEach((element, idx) => {
+    const speed = (idx + 1) * 0.035;
+    element.style.transform = `translateY(${y * speed}px)`;
+  });
+
+  const heroCopy = document.getElementById('heroCopy');
+  if(heroCopy){
+    heroCopy.style.setProperty('--heroShift', `${y * 0.08}px`);
+  }
+});
+
+const floatingChips = Array.from(document.querySelectorAll('.floating-chip'));
+const chipContainer = document.getElementById('visualFrame');
+if (floatingChips.length && chipContainer) {
+  const chips = floatingChips.map((el, idx) => ({
+    el,
+    x: 0,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    width: 0,
+    height: 0,
+    timeout: null,
+  }));
+
+  const setInitialState = () => {
+    const bounds = chipContainer.getBoundingClientRect();
+    chips.forEach((chip, idx) => {
+      const style = window.getComputedStyle(chip.el);
+      const left = parseFloat(style.left);
+      const top = parseFloat(style.top);
+      chip.width = chip.el.offsetWidth;
+      chip.height = chip.el.offsetHeight;
+      chip.x = Number.isFinite(left) ? left : (idx % 2 ? bounds.width * 0.68 : bounds.width * 0.12);
+      chip.y = Number.isFinite(top) ? top : (idx < 2 ? bounds.height * 0.18 : bounds.height * 0.62);
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 18 + Math.random() * 12;
+      chip.vx = Math.cos(angle) * speed;
+      chip.vy = Math.sin(angle) * speed;
+      chip.el.style.left = `${chip.x}px`;
+      chip.el.style.top = `${chip.y}px`;
+    });
+  };
+
+  const bounceChip = (chip, bounds) => {
+    const margin = 10;
+    const maxX = bounds.width - chip.width - margin;
+    const maxY = bounds.height - chip.height - margin;
+
+    if (chip.x <= margin) {
+      chip.x = margin;
+      chip.vx = Math.abs(chip.vx);
+    } else if (chip.x >= maxX) {
+      chip.x = maxX;
+      chip.vx = -Math.abs(chip.vx);
+    }
+
+    if (chip.y <= margin) {
+      chip.y = margin;
+      chip.vy = Math.abs(chip.vy);
+    } else if (chip.y >= maxY) {
+      chip.y = maxY;
+      chip.vy = -Math.abs(chip.vy);
+    }
+  };
+
+  const applyCollisionEffect = (chip) => {
+    chip.el.classList.add('collide');
+    clearTimeout(chip.timeout);
+    chip.timeout = setTimeout(() => chip.el.classList.remove('collide'), 220);
+  };
+
+  const resolveCollision = (a, b) => {
+    const nx = (a.x + a.width / 2) - (b.x + b.width / 2);
+    const ny = (a.y + a.height / 2) - (b.y + b.height / 2);
+    const dist = Math.max(Math.hypot(nx, ny), 1);
+    const relativeVelocity = (a.vx - b.vx) * (nx / dist) + (a.vy - b.vy) * (ny / dist);
+    if (relativeVelocity > 0) return;
+    const impulse = relativeVelocity * -1;
+    const normalX = nx / dist;
+    const normalY = ny / dist;
+    a.vx += normalX * impulse;
+    a.vy += normalY * impulse;
+    b.vx -= normalX * impulse;
+    b.vy -= normalY * impulse;
+    applyCollisionEffect(a);
+    applyCollisionEffect(b);
+  };
+
+  const updateAnimation = (time) => {
+    const bounds = chipContainer.getBoundingClientRect();
+    if (!updateAnimation.lastTime) updateAnimation.lastTime = time;
+    const delta = Math.min((time - updateAnimation.lastTime) / 1000, 0.05);
+    updateAnimation.lastTime = time;
+
+    chips.forEach((chip) => {
+      chip.width = chip.el.offsetWidth;
+      chip.height = chip.el.offsetHeight;
+      chip.x += chip.vx * delta;
+      chip.y += chip.vy * delta;
+      bounceChip(chip, bounds);
+    });
+
+    for (let i = 0; i < chips.length; i += 1) {
+      for (let j = i + 1; j < chips.length; j += 1) {
+        const a = chips[i];
+        const b = chips[j];
+        if (a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y) {
+          if (window.innerWidth > 768) {
+            resolveCollision(a, b);
+          }
+        }
+      }
+    }
+
+    chips.forEach((chip) => {
+      chip.el.style.left = `${chip.x}px`;
+      chip.el.style.top = `${chip.y}px`;
+    });
+
+    requestAnimationFrame(updateAnimation);
+  };
+
+  setInitialState();
+  window.addEventListener('resize', setInitialState);
+  requestAnimationFrame(updateAnimation);
+}
+
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+if(menuBtn && mobileMenu){
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('show'));
+  document.querySelectorAll('#mobileMenu a').forEach((link)=>link.addEventListener('click',()=>mobileMenu.classList.remove('show')));
+}
+</script>
+</body>
+</html>

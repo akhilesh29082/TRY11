@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - WITHX Innovations</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+
+:root{
+  --primary:#0a1f44;
+  --secondary:#f1f5f9;
+  --accent:#38bdf8;
+  --text:#111827;
+  --muted:#475569;
+  --panel:rgba(255,255,255,.74);
+  --panel-border:rgba(10,31,68,.08);
+  --max:1280px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at top left, rgba(56,189,248,.14), transparent 18%),
+              linear-gradient(180deg,#f8fbff 0%,#e8f0f8 100%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url('https://www.transparenttextures.com/patterns/noise.png');
+  opacity:.04;
+  pointer-events:none;
+  z-index:0;
+}
+
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(110px);
+  opacity:.18;
+  z-index:0;
+  animation:float 12s ease-in-out infinite;
+}
+.orb1{width:320px;height:320px;background:#93c5fd;top:5%;left:-4%;}
+.orb2{width:260px;height:260px;background:#7dd3fc;top:36%;right:2%;animation-delay:2s;}
+.orb3{width:220px;height:220px;background:#bfdbfe;bottom:8%;left:38%;animation-delay:4s;}
+@keyframes float{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-24px) translateX(16px)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.top-navbar{position:fixed;top:0;left:0;width:100%;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:#0b0d10;color:#fff;z-index:3000}.nav-left,.nav-right{display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo-box{height:54px;min-width:76px;padding:8px 14px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.22)}.brand-logo-box img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:30px}.top-navbar a{color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:.25s}.top-navbar a:hover,.top-navbar a.active{color:#38bdf8}.ask-btn{padding:14px 26px;border:1px solid #8b5cf6;border-radius:999px;background:#111827}.ask-btn:hover{box-shadow:0 0 24px rgba(56,189,248,.24)}.menu-btn{display:none;background:none;border:none;color:#fff;font-size:30px}.mobile-menu{position:fixed;top:88px;left:0;width:100%;background:#0b0d10;display:none;flex-direction:column;z-index:5000}.mobile-menu a{padding:18px 24px;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600}.mobile-menu.show{display:flex}
+.hero{
+  min-height:92vh;
+  display:grid;
+  place-items:center;
+  padding:130px 20px 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02) 40%, rgba(226,232,240,.46)),
+    radial-gradient(circle at 72% 28%, rgba(56,189,248,.12), transparent 22%);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-grid{
+  width:min(var(--max),100%);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:44px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-copy{
+  position:relative;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:30px;
+  padding:38px;
+  backdrop-filter:blur(20px);
+  animation:fadeInUp .9s ease forwards;
+}
+.hero-copy::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:6px;
+  height:100%;
+  border-radius:0 18px 18px 0;
+  background:linear-gradient(180deg, rgba(56,189,248,.95), rgba(14,165,233,.35));
+}
+.hero-copy>*{position:relative;}
+.hero-kicker{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(56,189,248,.12);
+  border:1px solid rgba(56,189,248,.22);
+  color:#0369a1;
+  font-size:.82rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(3rem,6vw,5.2rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:var(--primary);
+  max-width:8.5ch;
+  margin-bottom:16px;
+}
+.hero p{
+  color:var(--muted);
+  line-height:1.85;
+  max-width:38rem;
+  font-size:1.05rem;
+}
+.hero-stats{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.hero-stat{
+  position:relative;
+  background:rgba(255,255,255,.85);
+  border:1px solid rgba(10,31,68,.08);
+  border-radius:22px;
+  padding:22px;
+  overflow:hidden;
+}
+.hero-stat::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(56,189,248,.08), transparent 32%);
+  pointer-events:none;
+}
+.hero-stat b{display:block;color:var(--primary);margin-bottom:6px;font-size:1.08rem}
+.hero-stat span{color:var(--muted);font-size:.92rem;line-height:1.6}
+.hero-visual{
+  position:relative;
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:fadeInUp 1.05s ease .14s forwards;
+}
+.hero-frame{
+  width:min(580px,100%);
+  aspect-ratio:1/1.06;
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid rgba(56,189,248,.16);
+  position:relative;
+}
+.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-frame::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(10,31,68,.08));
+}
+.hero-frame::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  top:18px;
+  bottom:18px;
+  border-radius:28px;
+  border:1px dashed rgba(255,255,255,.18);
+  pointer-events:none;
+}
+.float-card{
+  position:absolute;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(10,31,68,.08);
+  border-radius:24px;
+  padding:20px;
+  width:240px;
+}
+.float-card.top{top:6%;right:-2%;}
+.float-card.bottom{bottom:6%;left:-2%;}
+.float-card small{color:#0369a1;display:block;margin-bottom:8px;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase}
+.float-card strong{color:var(--primary);line-height:1.45;font-size:1rem}
+.float-card{animation:floatCard 4.5s ease-in-out infinite;}
+@keyframes floatCard{0%,100%{transform:translateY(0)}25%{transform:translateY(-8px)}50%{transform:translateY(-16px)}75%{transform:translateY(-8px)}}
+
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+section{
+width:min(1200px,90%);
+  margin:0 auto;
+  padding:120px 0;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  transform:translateY(55px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+section .title,
+section .lead,
+section .summary-card,
+section .service-feature,
+section .service-card,
+section .process-card,
+section .process-step,
+section .highlight-card,
+section .cta-panel{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+section.show{opacity:1;transform:translateY(0)}
+section.show .title{opacity:1;transform:translateY(0);transition-delay:.16s;}
+section.show .lead{opacity:1;transform:translateY(0);transition-delay:.26s;}
+section.show .summary-card{opacity:1;transform:translateY(0);transition-delay:.22s;}
+section.show .service-feature{opacity:1;transform:translateY(0);transition-delay:.20s;}
+section.show .service-card{opacity:1;transform:translateY(0);transition-delay:.24s;}
+section.show .process-card{opacity:1;transform:translateY(0);transition-delay:.28s;}
+section.show .process-step{opacity:1;transform:translateY(0);transition-delay:.32s;}
+section.show .highlight-card{opacity:1;transform:translateY(0);transition-delay:.30s;}
+section.show .cta-panel{opacity:1;transform:translateY(0);transition-delay:.22s;}
+.lead{color:var(--muted);line-height:1.9;max-width:760px}
+.glass{
+  background:var(--panel);
+  border:1px solid var(--panel-border);
+  border-radius:28px;
+  backdrop-filter:blur(16px);
+}
+
+.section-heading-panel{
+  padding:40px 38px;
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:30px;
+  margin-bottom:48px;
+}
+
+.summary-section .section-heading-panel{
+  background:rgba(255,255,255,.92);
+  border-color:rgba(56,189,248,.25);
+}
+
+.summary-section .section-heading-panel .title,
+.summary-section .section-heading-panel .lead{
+  color:var(--primary);
+}
+
+.service-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+  margin-top:48px;
+}
+
+.summary-card{
+  padding:28px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(56,189,248,.35);
+  border-radius:28px;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+  animation:cardFloat 18s ease-in-out infinite;
+  color:var(--primary);
+  box-shadow:0 0 40px rgba(56,189,248,.15), inset 0 0 40px rgba(56,189,248,.08);
+}
+
+.summary-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(56,189,248,.55);
+  box-shadow:0 0 60px rgba(56,189,248,.25), inset 0 0 40px rgba(56,189,248,.12);
+}
+
+.summary-card h4{
+  font-size:1.2rem;
+  margin-bottom:12px;
+  color:var(--primary);
+  text-shadow:none;
+}
+
+.summary-card p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.summary-card-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:rgba(56,189,248,.22);
+  color:#ffffff;
+  font-size:1.6rem;
+  margin-bottom:18px;
+}
+
+.service-area-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+  margin-top:48px;
+}
+
+.service-card.premium{
+  padding:28px;
+  background:linear-gradient(180deg,rgba(56,189,248,.08),rgba(255,255,255,.95));
+  border:1px solid rgba(56,189,248,.22);
+  box-shadow:none;
+  animation:cardFloat 16s ease-in-out infinite;
+}
+
+.service-card.premium:hover{
+  transform:translateY(-8px);
+  border-color:rgba(56,189,248,.32);
+}
+
+.service-area-grid .service-card img{
+  height:240px;
+}
+
+.process-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+  margin-top:48px;
+}
+
+.process-card{
+  padding:28px;
+  position:relative;
+  background:linear-gradient(180deg,rgba(56,189,248,.08),rgba(255,255,255,.92));
+  border:1px solid rgba(56,189,248,.18);
+  border-radius:28px;
+  box-shadow:none;
+  transition:.3s ease,transform .3s ease,border-color .3s ease;
+  animation:cardFloat 18s ease-in-out infinite;
+}
+
+.process-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(56,189,248,.26);
+}
+
+.process-badge{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(56,189,248,.95),rgba(14,165,233,.45));
+  color:#fff;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.process-card h3{
+  margin-bottom:10px;
+  color:var(--primary);
+}
+
+.process-card p{
+  color:var(--muted);
+  line-height:1.75;
+}
+
+@media(max-width:980px){
+  .service-summary-grid,
+  .service-area-grid,
+  .process-cards{
+    grid-template-columns:1fr;
+  }
+}
+
+.service-feature{
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.service-feature img,
+.service-card img{
+  width:100%;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid rgba(10,31,68,.08);
+}
+.service-feature img{height:340px;margin-bottom:22px}
+.service-feature h3,
+.service-card h3{color:var(--primary);font-size:1.45rem;margin-bottom:12px}
+.service-feature p,
+.service-card p{color:var(--muted);line-height:1.85}
+.service-side{
+  display:grid;
+  gap:24px;
+}
+.service-card{
+  padding:26px;
+  transition:.35s ease, transform .35s ease, box-shadow .35s ease;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(10,31,68,.1);
+  border-radius:26px;
+  position:relative;
+}
+.service-card:hover,
+.service-feature:hover{
+  transform:translateY(-8px);
+  border-color:rgba(56,189,248,.28);
+}
+.service-card img{height:190px;margin-bottom:16px}
+
+.services-editorial{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:32px;
+align-items:center;
+justify-content:center;
+max-width:1200px;
+margin:0 auto;
+}
+
+.alt-services{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:32px;
+align-items:center;
+justify-content:center;
+max-width:1200px;
+margin:0 auto;
+}
+.services-editorial,
+.alt-services{
+margin:0 auto;
+justify-content:center;
+}
+
+
+.service-feature,
+.service-side,
+.process-panel,
+.highlight-grid{
+width:100%;
+justify-self:center;
+}
+.process-panel{
+  padding:34px;
+  position:relative;
+}
+.process-panel::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  right:-12px;
+  width:68px;
+  height:68px;
+  background:rgba(56,189,248,.12);
+  border-radius:50%;
+}
+.process-steps{
+  margin-top:24px;
+  display:grid;
+  gap:18px;
+}
+.process-step{
+  padding:22px 24px;
+  border-radius:18px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(10,31,68,.08);
+  transition:.3s ease, transform .3s ease;
+}
+.process-step:hover{
+  transform:translateX(4px);
+}
+.process-step b{display:block;color:var(--primary);margin-bottom:6px}
+.process-step span{color:var(--muted);line-height:1.7}
+.highlight-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px;
+  margin-top:48px;
+}
+.highlight-card{
+  padding:28px;
+  transition:.35s ease, transform .35s ease, border-color .35s ease;
+  background:linear-gradient(180deg,rgba(56,189,248,.1),rgba(255,255,255,.92));
+  border:1px solid rgba(56,189,248,.18);
+  border-radius:28px;
+  box-shadow:none;
+  animation:cardFloat 20s ease-in-out infinite;
+}
+.highlight-card:hover{transform:translateY(-8px);border-color:rgba(56,189,248,.32);}
+.highlight-card .icon{font-size:2.1rem;margin-bottom:12px}
+.highlight-card h4{color:var(--primary);margin-bottom:10px;font-size:1.1rem}
+.highlight-card p{color:var(--muted);line-height:1.75}
+
+.cta-panel{
+  padding:42px;
+  text-align:center;
+  position:relative;
+}
+.cta-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(56,189,248,.12), transparent 32%);
+  pointer-events:none;
+}
+.cta-panel p{color:var(--muted);line-height:1.85;max-width:700px;margin:0 auto 22px}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  padding:16px 28px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(180deg,var(--accent),#0284c7);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s ease, transform .3s ease, box-shadow .3s ease;
+  box-shadow:0 18px 30px rgba(56,189,248,.25);
+}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 24px 45px rgba(56,189,248,.28);}
+.btn.secondary{
+  background:rgba(255,255,255,.8);
+  color:var(--primary);
+  border:1px solid rgba(10,31,68,.10);
+  box-shadow:none;
+}
+.footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8% 25px;
+  margin-top:40px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1.4fr;
+  gap:50px;
+}
+
+.footer-box h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.footer-box h4{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.footer-box p,
+.footer-contact span{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+.footer-links,
+.footer-contact{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a,
+.footer-contact a{
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:#38bdf8;
+}
+
+.social-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.social-links a{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#1e293b;
+  font-weight:600;
+}
+
+.linkedin{color:#60a5fa !important;}
+.instagram{color:#fb7185 !important;}
+.youtube{color:#ff0000 !important;}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:40px auto 0;
+  padding-top:20px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#94a3b8;
+}
+
+
+@media(max-width:980px){
+  .hero-grid,
+  .services-editorial,
+  .alt-services{grid-template-columns:1fr}
+  .hero-copy{text-align:center}
+  .hero h1{max-width:none}
+  .hero-stats{grid-template-columns:1fr}
+  .hero-visual{min-height:500px}
+  .float-card.top{right:4%}
+  .float-card.bottom{left:4%}
+}
+@media(max-width:900px){
+  .top-navbar{height:auto;padding:18px 22px;flex-direction:row;align-items:center}
+  .nav-links,.ask-btn,.nav-right>a[href="about.html"]{display:none}
+  .menu-btn{display:block}
+  .nav-left,.nav-right{gap:18px}
+  .hero{padding-top:130px}
+  .footer-container{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .hero{padding-top:150px}
+  .hero-copy,.service-feature,.service-card,.process-panel,.highlight-card,.cta-panel{padding:24px 20px}
+  .highlight-grid{grid-template-columns:1fr}
+  .float-card{position:absolute;margin-top:0;width:190px;padding:12px;z-index:10;}
+  .float-card.top{top:4%;right:2%;bottom:auto;left:auto;}
+  .float-card.bottom{bottom:4%;left:2%;top:auto;right:auto;}
+  .float-card small{font-size:0.75rem;margin-bottom:4px;}
+  .float-card strong{font-size:0.85rem;}
+  section{
+width:100%;
+max-width:1280px;
+margin:0 auto;
+padding:100px 40px;
+}
+
+/*added for service to come in middle not side*/
+.service-feature,
+.service-side,
+.process-panel,
+.highlight-grid{
+width:100%;
+justify-self:center;
+}
+}
+.ask-btn{
+  padding:14px 26px !important;
+  border:1px solid #8b5cf6 !important;
+  border-radius:999px !important;
+  background:#111827 !important;
+  color:#ffffff !important;
+}
+.ask-btn:hover{
+  border-color:#38bdf8 !important;
+  color:#ffffff !important;
+  box-shadow:0 0 24px rgba(56,189,248,.24) !important;
+  transform:translateY(-1px) !important;
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<nav class="top-navbar">
+  <div class="nav-left">
+    <a class="brand" href="index.html" aria-label="WITHX Home">
+      <span class="brand-logo-box"><img src="https://i.ibb.co/5gCTxNtx/Whats-App-Image-2026-06-09-at-12-19-38-PM.jpg" alt="WITHX Logo"></span>
+     
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button id="menuBtn" class="menu-btn">☰</button>
+    <a class="ask-btn" href="contact.html">Ask WITHX</a>
+
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu"><a href="index.html">Home</a><a href="services.html">Services</a><a href="products.html">Products</a>
+  <a href="research.html">Research</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+
+
+<section class="hero show">
+  <div class="hero-grid">
+    <div class="hero-copy glass">
+      <div class="hero-kicker">WITHX Services</div>
+      <h1>Engineering services shaped for real-world execution.</h1>
+      <p>Our services combine innovation, technical depth, and practical problem solving to support products, prototypes, and engineering systems that create measurable impact.</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-frame glass">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80" alt="Engineering and development workspace">
+      </div>
+      <div class="float-card top">
+        <small>Built around</small>
+        <strong>Research, development, and practical engineering execution.</strong>
+      </div>
+      <div class="float-card bottom">
+        <small>Service mindset</small>
+        <strong>Innovation with usability, structure, and real-world outcomes.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="summary-section">
+  <div class="section-heading-panel glass">
+    <div class="title">WITHX service pillars</div>
+    <p class="lead">A distinctive set of strengths that powers manufacturing, research, and design across every engagement.</p>
+  </div>
+  <div class="service-summary-grid">
+    <div class="summary-card">
+      <div class="summary-card-icon">🏭</div>
+      <h4>Manufacturing</h4>
+      <p>Systems and solution thinking rooted in practical implementation.</p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-icon">🔬</div>
+      <h4>Research</h4>
+      <p>Innovation supported by exploration, testing, and technical learning.</p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-icon">🛠️</div>
+      <h4>Design</h4>
+      <p>Engineering ideas translated into useful and purposeful products.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading-panel glass">
+    <div class="title">Core Service Areas</div>
+    <p class="lead">WITHX brings together multiple engineering capabilities that support innovation from concept to execution.</p>
+  </div>
+  <div class="service-area-grid">
+    <div class="service-card premium glass">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="Research and development">
+      <h3>Research & Development</h3>
+      <p>Our research and development service focuses on experimentation, concept refinement, and technical exploration. It supports the discovery of innovative directions and helps shape raw ideas into more structured and feasible engineering opportunities.</p>
+    </div>
+    <div class="service-card premium glass">
+      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80" alt="Manufacturing solutions">
+      <h3>Manufacturing Solutions</h3>
+      <p>WITHX develops manufacturing-focused engineering solutions that aim to improve usability, productivity, and system-level efficiency. This service is centered on creating practical approaches that support smoother workflows, better operational logic, and stronger real-world implementation value.</p>
+    </div>
+    <div class="service-card premium glass">
+      <img src="https://images.unsplash.com/photo-1581091012184-5c0b96d66d04?auto=format&fit=crop&w=1600&q=80" alt="Prototype development">
+      <h3>Prototype Development</h3>
+      <p>WITHX transforms concepts into working prototype models that help validate ideas, test performance, and improve design confidence. This service supports the journey from concept stage to tangible engineering output.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading-panel glass">
+    <div class="title">How our service approach works</div>
+    <p class="lead" style="max-width:none;">Every WITHX service is built around a simple but strong flow — understand the challenge, explore possibilities, develop structured solutions, and move toward purposeful outcomes.</p>
+  </div>
+  <div class="process-cards">
+    <div class="process-card glass">
+      <div class="process-badge">1</div>
+      <h3>Understand the problem</h3>
+      <p>We begin by identifying the practical challenge, use case, and engineering need.</p>
+    </div>
+    <div class="process-card glass">
+      <div class="process-badge">2</div>
+      <h3>Explore and refine</h3>
+      <p>Research, technical thinking, and iterative improvement help shape better directions.</p>
+    </div>
+    <div class="process-card glass">
+      <div class="process-badge">3</div>
+      <h3>Build and validate</h3>
+      <p>Ideas are translated into prototype, system, or design outcomes that can be evaluated.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="highlight-grid">
+      <div class="highlight-card glass">
+        <div class="icon">📐</div>
+        <h4>Industrial Design</h4>
+        <p>WITHX creates product and system designs that balance function, clarity, engineering logic, and user relevance. Industrial design is approached not only as appearance, but as a purposeful part of how a solution performs and is experienced.</p>
+      </div>
+      <div class="highlight-card glass">
+        <div class="icon">⚙️</div>
+        <h4>Execution-Led Thinking</h4>
+        <p>Services are shaped around practicality, so concepts move closer to usable engineering results instead of remaining theoretical.</p>
+      </div>
+      <div class="highlight-card glass">
+        <div class="icon">🔬</div>
+        <h4>Innovation Support</h4>
+        <p>Research-driven service flow helps strengthen creativity with structure, testing, and technical reasoning.</p>
+      </div>
+      <div class="highlight-card glass">
+        <div class="icon">🚀</div>
+        <h4>Real-World Relevance</h4>
+        <p>Every service is aligned with the goal of creating outcomes that matter in practical engineering contexts.</p>
+      </div>
+    </div>
+</section>
+
+
+<footer class="footer"><div class="footer-container"><div class="footer-box"><h3>WITHX INNOVATIONS</h3><p>WITHX Innovations Private Limited is an engineering-driven company focused on research & development, manufacturing solutions, industrial design, product innovation and advanced technology development.</p></div><div class="footer-box"><h4>Quick Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="services.html">Services</a><a href="products.html">Products</a><a href="research.html">Research</a><a href="contact.html">Contact</a></div></div><div class="footer-box"><h4>Contact</h4><div class="footer-contact"><span>📍 EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span><span>🏢 WITHX Innovations Pvt. Ltd.</span><a href="mailto:withx.innovations@gmail.com">✉ withx.innovations@gmail.com</a><div class="social-links"><a class="linkedin" href="https://www.linkedin.com/company/withx-innovations/" target="_blank">LinkedIn</a><a class="instagram" href="https://www.instagram.com/withx.in" target="_blank">Instagram</a><a class="youtube" href="https://youtube.com/@withxinnovation" target="_blank">YouTube</a></div></div></div></div><div class="footer-bottom">© 2026 WITHX Innovations Private Limited. All Rights Reserved.</div></footer>
+<script>
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.14 });
+sections.forEach((section) => observer.observe(section));
+
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+if(menuBtn && mobileMenu){
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('show'));
+  document.querySelectorAll('#mobileMenu a').forEach((link)=>link.addEventListener('click',()=>mobileMenu.classList.remove('show')));
+}
+</script>
+</body>
+</html>

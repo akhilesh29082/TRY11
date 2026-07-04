@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - WITHX Innovations</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+:root{--primary:#0b1e3a;--accent:#38bdf8;--accent2:#2563eb;--bg:#f7fbff;--text:#111827;--muted:#64748b;--card:#fff;--line:#e2e8f0;--soft:#eef8ff}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(180deg,#f8fbff,#edf6ff);color:var(--text);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 12% 18%,rgba(56,189,248,.13),transparent 24%),radial-gradient(circle at 88% 14%,rgba(147,197,253,.16),transparent 22%),linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);background-size:auto,auto,34px 34px,34px 34px;z-index:-2}.parallax-blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.24;z-index:-1;pointer-events:none;animation:floatOrb 12s ease-in-out infinite}.blob-1{width:310px;height:310px;background:#7dd3fc;top:8%;left:-6%}.blob-2{width:250px;height:250px;background:#bfdbfe;top:45%;right:-5%;animation-delay:2s}.blob-3{width:220px;height:220px;background:#93c5fd;bottom:6%;left:40%;animation-delay:4s}@keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-30px)}}
+.top-navbar{position:fixed;top:0;left:0;width:100%;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:#0b0d10;color:#fff;z-index:3000}.nav-left,.nav-right{display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo-box{height:54px;min-width:76px;padding:8px 14px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.22)}.brand-logo-box img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:30px}.top-navbar a{color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:.25s}.top-navbar a:hover,.top-navbar a.active{color:#38bdf8}.ask-btn{padding:14px 26px;border:1px solid #8b5cf6;border-radius:999px;background:#111827}.ask-btn:hover{box-shadow:0 0 24px rgba(56,189,248,.24)}.menu-btn{display:none;background:none;border:none;color:#fff;font-size:30px}.mobile-menu{position:fixed;top:88px;left:0;width:100%;background:#0b0d10;display:none;flex-direction:column;z-index:5000}.mobile-menu a{padding:18px 24px;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600}.mobile-menu.show{display:flex}
+.hero{min-height:74vh;display:grid;place-items:center;text-align:center;padding:145px 20px 60px;position:relative;overflow:hidden}.hero-inner{position:relative;z-index:2;animation:fadeUp .9s ease forwards}.hero h1{font-size:clamp(2.8rem,6vw,5rem);color:var(--primary);letter-spacing:-.04em;margin-bottom:0;position:relative;z-index:2}.hero-title-wrap{position:relative;display:inline-block;margin-bottom:14px;z-index:1}.products-wave-canvas{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);width:380px;height:120px;z-index:-1;pointer-events:none}.hero p{color:var(--muted);font-size:1.1rem;line-height:1.85;max-width:790px;margin:auto}.hero-cards{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.hero-mini-card{padding:13px 18px;border-radius:999px;background:rgba(255,255,255,.82);border:1px solid rgba(56,189,248,.24);box-shadow:0 12px 28px rgba(15,23,42,.08);animation:softFloat 4s ease-in-out infinite}.hero-mini-card:nth-child(2){animation-delay:.7s}.hero-mini-card:nth-child(3){animation-delay:1.3s}.hero-mini-card strong{color:var(--primary);margin-right:6px}.hero-mini-card span{color:var(--muted)}@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}@keyframes softFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.section{padding:86px 8%;opacity:0;transform:translateY(45px);transition:.85s ease}.section.show{opacity:1;transform:translateY(0)}.section-head{max-width:860px;margin-bottom:38px}.title{font-size:clamp(2rem,4vw,3rem);color:var(--primary);letter-spacing:-.03em;margin-bottom:14px}.lead{color:var(--muted);line-height:1.9}.products-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:30px}.product-card{background:rgba(255,255,255,.88);border:1px solid rgba(56,189,248,.18);border-radius:30px;overflow:hidden;box-shadow:0 22px 60px rgba(15,23,42,.10);transition:.4s ease;transform-style:preserve-3d;will-change:transform;position:relative}.product-card:hover{transform:translateY(-10px);box-shadow:0 32px 85px rgba(56,189,248,.18)}.product-top{background:linear-gradient(135deg,#f8fbff,#eaf8ff)}.product-media{min-height:320px;display:flex;align-items:center;justify-content:center;padding:22px;position:relative;border-bottom:1px solid rgba(56,189,248,.14);background:linear-gradient(135deg,#ffffff,#eef8ff);cursor:pointer}.product-media::after{content:'Click image to view';position:absolute;left:18px;bottom:18px;padding:9px 13px;border-radius:999px;background:rgba(15,23,42,.72);color:#fff;font-size:.78rem;font-weight:800;backdrop-filter:blur(10px);opacity:0;transform:translateY(8px);transition:.3s}.product-card:hover .product-media::after{opacity:1;transform:translateY(0)}.product-media img{width:100%;height:300px;object-fit:contain;object-position:center;border-radius:20px;transition:.4s ease}.product-card:hover .product-media img{transform:scale(1.04)}.product-body{padding:30px;display:flex;flex-direction:column;min-height:330px}.product-tagline{display:inline-flex;width:max-content;margin-bottom:14px;padding:8px 13px;border-radius:999px;background:linear-gradient(135deg,rgba(56,189,248,.16),rgba(37,99,235,.10));border:1px solid rgba(56,189,248,.22);color:#075985;font-size:.82rem;font-weight:800}.product-body h3{color:var(--primary);font-size:1.5rem;margin-bottom:12px}.product-body p{color:var(--muted);line-height:1.8;margin-bottom:16px}.feature-list{display:grid;gap:10px;margin:4px 0 22px}.feature-list span{color:#334155;font-size:.95rem;padding-left:28px;position:relative;line-height:1.45}.feature-list span::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#e0f2fe;color:#0284c7;font-size:.75rem;font-weight:900}.btn{padding:13px 22px;border:none;border-radius:999px;background:linear-gradient(135deg,#38bdf8,#2563eb);color:#fff;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:.28s;box-shadow:0 14px 30px rgba(37,99,235,.20);margin-top:auto;width:max-content}.btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(37,99,235,.28)}.btn.secondary{background:#eff6ff;color:#0b1e3a;border:1px solid #bfdbfe;box-shadow:none}.note-box{margin-top:34px;padding:22px 24px;border-radius:22px;background:linear-gradient(135deg,#ecfeff,#fff);border:1px solid #bae6fd;color:#155e75;line-height:1.8}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;z-index:99999;padding:110px 24px 30px}.modal.open{display:flex}.modal-card{width:min(1040px,94vw);max-height:calc(100vh - 138px);overflow-y:auto;background:#fff;border-radius:30px;box-shadow:0 45px 120px rgba(0,0,0,.40);position:relative}.modal-card::-webkit-scrollbar{width:8px}.modal-card::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}.modal-hero{padding:42px 48px;background:linear-gradient(135deg,#0b1e3a,#1d4ed8);color:#fff;border-radius:30px 30px 0 0;position:relative;overflow:hidden}.modal-hero::after{content:"";position:absolute;width:260px;height:260px;right:-95px;top:-95px;border-radius:50%;background:rgba(255,255,255,.10)}.modal-close{position:absolute;top:18px;right:18px;width:46px;height:46px;border:none;border-radius:50%;background:#fff;color:#0f172a;font-size:20px;font-weight:900;cursor:pointer;z-index:5;box-shadow:0 12px 28px rgba(0,0,0,.22)}.modal-hero h3{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;margin:0 58px 14px 0;position:relative;z-index:2}.modal-hero p{color:#dbeafe;font-size:1.05rem;line-height:1.8;max-width:820px;position:relative;z-index:2}.modal-content{padding:34px 42px 42px}.media-slider-wrap{width:min(620px,100%);margin:0 auto 32px}.media-slider{position:relative;background:linear-gradient(135deg,#f8fbff,#eef8ff);border:1px solid #dbeafe;border-radius:28px;aspect-ratio:1/1;overflow:hidden;box-shadow:0 22px 60px rgba(15,23,42,.12)}.media-slide{position:absolute;inset:0;padding:22px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateX(24px);pointer-events:none;transition:.35s ease}.media-slide.active{opacity:1;transform:translateX(0);pointer-events:auto}.media-slide img{width:100%;height:100%;object-fit:contain;border-radius:20px}.media-slide video{width:100%;height:100%;object-fit:contain;background:#0f172a;border-radius:20px}.modal-video-placeholder{width:100%;height:100%;border-radius:20px;border:1px dashed rgba(37,99,235,.35);display:grid;place-items:center;text-align:center;padding:24px;background:#fff;color:#1e3a8a;line-height:1.7}.modal-video-placeholder b{display:block;margin-bottom:8px}.slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;border-radius:50%;background:rgba(15,23,42,.72);color:#fff;font-size:22px;font-weight:900;cursor:pointer;z-index:3;backdrop-filter:blur(10px)}.slider-btn.prev{left:14px}.slider-btn.next{right:14px}.slider-dots{display:flex;justify-content:center;gap:10px;margin-top:14px}.slider-dot{width:10px;height:10px;border-radius:50%;border:none;background:#bfdbfe;cursor:pointer}.slider-dot.active{background:#2563eb;transform:scale(1.25)}.slide-label{text-align:center;margin-top:10px;color:#64748b;font-weight:700;font-size:.92rem}.modal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:32px}.detail-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:22px;padding:24px;min-height:160px}.detail-box strong{display:block;color:var(--primary);font-size:1.08rem;margin-bottom:12px}.detail-box span{display:block;color:#64748b;line-height:1.75}.modal-content h4{color:var(--primary);font-size:1.25rem;margin:0 0 16px}.modal-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.modal-list span{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:15px 16px 15px 42px;color:#1e3a8a;font-weight:700;line-height:1.45;position:relative}.modal-list span::before{content:"✓";position:absolute;left:16px;top:15px;color:#2563eb;font-weight:900}.modal-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}.video-help{margin-top:14px;font-size:.92rem;color:#64748b;line-height:1.7}body.modal-active{overflow:hidden}.cta{text-align:center}.footer{background:#0f172a;color:#fff;padding:70px 8% 25px;margin-top:70px}.footer-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1.4fr;gap:50px}.footer-box h3{font-size:28px;font-weight:800;margin-bottom:15px}.footer-box h4{font-size:18px;margin-bottom:20px}.footer-box p,.footer-contact span{color:#cbd5e1;line-height:1.8}.footer-links,.footer-contact{display:flex;flex-direction:column;gap:12px}.footer-links a,.footer-contact a{color:#cbd5e1;text-decoration:none;transition:.3s}.footer-links a:hover,.footer-contact a:hover{color:#38bdf8;transform:translateX(4px)}.social-links{display:flex;gap:12px;margin-top:15px;flex-wrap:wrap}.social-links a{padding:10px 16px;border-radius:999px;background:#1e293b;text-decoration:none;font-weight:600}.linkedin{color:#60a5fa!important}.instagram{color:#fb7185!important}.youtube{color:#ff0000!important}.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;text-align:center;border-top:1px solid rgba(255,255,255,.1);color:#94a3b8}
+@media(max-width:1100px){.products-grid{grid-template-columns:1fr}.modal-grid,.modal-list{grid-template-columns:1fr}}@media(max-width:900px){.top-navbar{height:auto;padding:18px 22px;flex-direction:row;align-items:center}.nav-links,.ask-btn,.nav-right>a[href="about.html"]{display:none}.menu-btn{display:block}.nav-left,.nav-right{gap:18px}.hero{padding-top:130px}.footer-container{grid-template-columns:1fr}}@media(max-width:640px){.section{padding:70px 5%}.product-media{min-height:250px}.product-media img{height:230px}.product-body{padding:24px;min-height:auto}.media-slider-wrap{width:min(420px,100%)}.modal{padding:95px 14px 24px}.modal-card{border-radius:22px;max-height:calc(100vh - 118px)}.modal-hero,.modal-content{padding:28px 22px}.modal-hero{border-radius:22px 22px 0 0}.hero h1{font-size:2.45rem}}
+
+
+/* ===== SEPARATE DETAILS POPUP + IMAGE/VIDEO SQUARE SLIDER ===== */
+.details-modal .modal-card{width:min(900px,92vw)!important;}
+.details-modal .modal-content{padding:38px 48px 42px!important;}
+.media-modal .modal-card{width:min(640px,92vw)!important;max-height:calc(100vh - 140px)!important;overflow:hidden!important;border-radius:30px!important;}
+.media-modal .modal-hero{padding:22px 72px 18px 28px!important;background:linear-gradient(135deg,#eff6ff,#ffffff)!important;color:#0b1e3a!important;border-bottom:1px solid #dbeafe!important;}
+.media-modal .modal-hero h3{color:#0b1e3a!important;font-size:1.25rem!important;margin:0!important;}
+.media-modal .modal-content{padding:22px!important;background:#ffffff!important;}
+.media-slider-wrap{width:100%!important;margin:0!important;}
+.media-slider{position:relative;background:linear-gradient(135deg,#f8fbff,#eef8ff);border:1px solid #dbeafe;border-radius:24px;aspect-ratio:1/1;overflow:hidden;box-shadow:0 20px 50px rgba(15,23,42,.12)}
+.media-slide{position:absolute;inset:0;padding:20px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateX(28px);pointer-events:none;transition:.35s ease}
+.media-slide.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.media-slide img{width:100%;height:100%;object-fit:contain;border-radius:18px}
+.media-slide video{width:100%;height:100%;object-fit:contain;background:#0f172a;border-radius:18px}
+.product-media{cursor:zoom-in;}
+.product-media::after{content:'Click to view image/video';position:absolute;left:16px;bottom:16px;background:rgba(15,23,42,.72);color:#fff;padding:8px 12px;border-radius:999px;font-size:.78rem;font-weight:700;opacity:0;transform:translateY(8px);transition:.25s;backdrop-filter:blur(10px)}
+.product-media:hover::after{opacity:1;transform:translateY(0)}
+.modal-video-placeholder{width:100%;height:100%;border-radius:18px;border:1px dashed rgba(37,99,235,.35);display:grid;place-items:center;text-align:center;padding:24px;background:#fff;color:#1e3a8a;line-height:1.7}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;border-radius:50%;background:rgba(15,23,42,.72);color:#fff;font-size:22px;font-weight:900;cursor:pointer;z-index:3;backdrop-filter:blur(10px)}
+.slider-btn.prev{left:14px}.slider-btn.next{right:14px}
+.slider-dots{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.slider-dot{width:10px;height:10px;border-radius:50%;border:none;background:#bfdbfe;cursor:pointer}.slider-dot.active{background:#2563eb;transform:scale(1.25)}
+.slide-label{text-align:center;margin-top:10px;color:#64748b;font-weight:700;font-size:.92rem}
+@media(max-width:640px){.media-modal .modal-card{width:94vw!important}.media-modal .modal-content{padding:16px!important}.media-slider{border-radius:20px}}
+
+/* ===== FINAL IMAGE VISIBILITY + MEDIA POPUP FIX ===== */
+.product-media{
+  min-height:360px !important;
+  background:linear-gradient(135deg,#ffffff,#eef8ff,#f8fbff) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:26px !important;
+  cursor:zoom-in !important;
+}
+.product-media img{
+  width:100% !important;
+  height:330px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  border-radius:18px !important;
+  background:#ffffff !important;
+}
+.media-modal .modal-card{
+  width:min(560px,94vw) !important;
+  max-height:calc(100vh - 120px) !important;
+}
+.media-modal .modal-content{
+  padding:22px !important;
+}
+.media-slider{
+  aspect-ratio:1 / 1 !important;
+  background:linear-gradient(135deg,#ffffff,#eef8ff,#f8fbff) !important;
+}
+.media-slide img,
+.media-slide video{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:#ffffff !important;
+}
+@media(max-width:640px){
+  .product-media{min-height:300px !important;padding:18px !important;}
+  .product-media img{height:270px !important;}
+}
+
+</style>
+</head>
+<body>
+<div class="parallax-blob blob-1"></div><div class="parallax-blob blob-2"></div><div class="parallax-blob blob-3"></div>
+<nav class="top-navbar">
+  <div class="nav-left">
+    <a class="brand" href="index.html" aria-label="WITHX Home"><span class="brand-logo-box"><img src="https://i.ibb.co/5gCTxNtx/Whats-App-Image-2026-06-09-at-12-19-38-PM.jpg" alt="WITHX Logo"></span></a>
+    <div class="nav-links"
+      ><a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="research.html">Research</a>
+      <a href="contact.html">Contact</a></div>
+  </div>
+  <div class="nav-right"><button id="menuBtn" class="menu-btn">☰</button><a class="ask-btn" href="contact.html">Ask WITHX</a><a href="about.html">About</a></div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="products.html">Products</a>
+  <a href="research.html">Research</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+<section class="hero">
+  <div class="hero-inner" id="heroInner">
+    <div class="hero-title-wrap">
+      <canvas id="productsWaveCanvas" class="products-wave-canvas"></canvas>
+      <h1>Our Products</h1>
+    </div>
+    <p>Explore innovation-driven WITHX products with clear images, product videos, useful details, and practical real-world applications.</p>
+    <div class="hero-cards">
+      <div class="hero-mini-card"><strong>4 Products</strong><span>Innovation lineup</span></div><div class="hero-mini-card"><strong>Video View</strong><span>Product demo section</span></div><div class="hero-mini-card"><strong>Details</strong><span>Features & applications</span></div>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="section-head"><div class="title">Product Catalog</div><p class="lead">Each product card includes a clear product image, a video area, short product information, and a details popup. Add your video file path in the video source where needed.</p></div>
+<div class="products-grid">
+
+  <div class="product-card" tabindex="0">
+    <div class="product-top">
+      <div class="product-media">
+        <img src="https://i.ibb.co/218RTVxk/Whats-App-Image-2026-06-11-at-1-56-19-PM.jpg" alt="Multifunctional Utensil Cleaner">
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-tagline">Clean Smarter. Save Time.</div>
+      <h3>Multifunctional Utensil Cleaner</h3>
+      <p>Portable all-in-one utensil cleaning device with scrubbing, water spray, soap dispensing, and optional hot-water cleaning.</p>
+      <div class="feature-list"><span>Rotating scrubber and spray system</span><span>Built-in soap storage</span><span>Replaceable cleaning heads</span></div>
+      <button class="btn" type="button" data-product="Multifunctional Utensil Cleaner" data-image="https://i.ibb.co/218RTVxk/Whats-App-Image-2026-06-11-at-1-56-19-PM.jpg" data-video="https://res.cloudinary.com/dsgoc7dxv/video/upload/v1781259051/WhatsApp_Video_2026-06-11_at_2.39.00_PM_oxpzao.mp4" data-desc="A portable multifunctional dish-cleaning device designed to make utensil washing faster, easier, hygienic, and more affordable for homes and businesses." data-problem="Traditional dishwashing takes time, causes hand fatigue, wastes water and liquid, and dishwashers are expensive." data-solution="A compact system combining rotating scrubbing, water spraying, soap dispensing, hot-water cleaning, and interchangeable heads." data-customers="Households, hostels, restaurants, hotels, catering businesses, elderly users, and working professionals." data-features="Rotating scrubber|Water spray system|Soap tank and dispenser switch|DC motors for scrubbing and spraying|Heating unit for greasy utensils|Interchangeable cleaning heads">View Details</button>
+    </div>
+  </div>
+
+  <div class="product-card" tabindex="0">
+    <div class="product-top">
+      <div class="product-media"><img src="https://i.ibb.co/S4jMGRr6/Screenshot-2026-06-11-145657.png" alt="Wada Maker Machine"></div>
+    </div>
+    <div class="product-body">
+      <div class="product-tagline">Perfect Wada. Every Time.</div><h3>Wada Maker Machine</h3>
+      <p>Automated food-processing machine for making uniform wada quickly, hygienically, and efficiently.</p>
+      <div class="feature-list"><span>Uniform wada formation</span><span>High production rate</span><span>Reduced manual effort</span></div>
+      <button class="btn" type="button" data-product="Wada Maker Machine" data-image="https://i.ibb.co/S4jMGRr6/Screenshot-2026-06-11-145657.png" data-video="wada-maker.mp4" data-desc="An innovative food-processing machine designed to automate preparation and shaping of wada for vendors and food businesses." data-problem="Traditional wada preparation is time-consuming, labor-intensive, and can result in inconsistent size, shape, and hygiene." data-solution="The operator fills the batter chamber, selects settings, and the machine automatically dispenses and shapes wada for frying." data-customers="Street food vendors, hotels, restaurants, catering services, canteens, cloud kitchens, and food manufacturing units." data-features="Uniform wada formation|High production rate|Hygienic operation|User-friendly controls|Compact design|Cost-effective commercial use">View Details</button>
+    </div>
+  </div>
+
+  <div class="product-card" tabindex="0">
+    <div class="product-top">
+      <div class="product-media"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1400&q=80" alt="WITHX Drone Surveillance System"></div>
+    </div>
+    <div class="product-body">
+      <div class="product-tagline">Advanced Aerial Monitoring</div><h3>WITHX Drone Surveillance System</h3>
+      <p>Advanced aerial monitoring and reconnaissance platform for real-time surveillance, inspection, and situational awareness.</p>
+      <div class="feature-list"><span>Real-time video monitoring</span><span>GPS-based navigation</span><span>Autonomous flight capability</span></div>
+      <button class="btn" type="button" data-product="WITHX Drone Surveillance System" data-image="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1400&q=80" data-video="drone-surveillance.mp4" data-desc="The WITHX Drone Surveillance System is designed to provide real-time aerial monitoring, reconnaissance, and situational awareness for security, inspection, and surveillance applications." data-problem="Manual monitoring is slow, risky, and limited in range during security, border observation, disaster assessment, and infrastructure inspection tasks." data-solution="A rapidly deployable drone surveillance platform with live video, GPS navigation, autonomous flight, and long-range observation capability." data-customers="Security teams, inspection teams, disaster response units, infrastructure monitoring teams, and search and rescue support teams." data-features="Real-Time Video Monitoring|GPS-Based Navigation|Autonomous Flight Capability|Long-Range Surveillance|Day & Night Operations|Live Data Transmission|Security Monitoring|Border Observation|Disaster Assessment|Search & Rescue Support|Infrastructure Inspection">View Details</button>
+    </div>
+  </div>
+
+  <div class="product-card" tabindex="0">
+    <div class="product-top">
+      <div class="product-media"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="WITHX Lead Frame"></div>
+    </div>
+    <div class="product-body">
+      <div class="product-tagline">Precision Semiconductor Support</div><h3>WITHX Lead Frame</h3>
+      <p>A precision-engineered metal framework used in semiconductor packaging to support chips and provide electrical connections.</p>
+      <div class="feature-list"><span>Mechanical support for chip mounting</span><span>Electrical connection to external circuits</span><span>Efficient heat dissipation</span></div>
+      <button class="btn" type="button" data-product="WITHX Lead Frame" data-image="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" data-video="lead-frame.mp4" data-desc="WITHX Lead Frame focuses on precision-engineered lead frame solutions for semiconductor and electronic packaging applications, improving electrical performance, thermal efficiency, and reliability." data-problem="Semiconductor chips require strong mechanical support, reliable electrical connection, and efficient heat dissipation in compact electronic packages." data-solution="A thin metal framework with die pad, leads, tie bars, and dam bars that supports the chip, transfers signals and power, and helps conduct heat away from the semiconductor device." data-customers="Semiconductor packaging units, electronics manufacturers, IC manufacturers, LED packaging teams, sensor manufacturers, and industrial electronics companies." data-features="Precision Engineering|High Conductivity Design|Efficient Thermal Management|Customizable Configurations|Cost-Effective Manufacturing|Reliable Performance|Used in ICs and Microcontrollers|Used in LEDs and Sensors|Suitable for Automotive and Industrial Electronics">View Details</button>
+    </div>
+  </div>
+
+</div>
+</section>
+<div class="modal details-modal" id="detailsModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+    <button class="modal-close" id="closeDetails" aria-label="Close product details">✕</button>
+    <div class="modal-hero"><h3 id="detailsTitle"></h3><p id="detailsDesc"></p></div>
+    <div class="modal-content">
+      <div class="modal-grid">
+        <div class="detail-box"><strong>Problem</strong><span id="detailsProblem"></span></div>
+        <div class="detail-box"><strong>Solution</strong><span id="detailsSolution"></span></div>
+        <div class="detail-box"><strong>Target Customers</strong><span id="detailsCustomers"></span></div>
+        <div class="detail-box"><strong>Product Focus</strong><span>Efficiency, safety, usability, practical engineering value, and real-world application.</span></div>
+      </div>
+      <h4>Key Highlights & Applications</h4>
+      <div class="modal-list" id="detailsFeatures"></div>
+      <div class="modal-cta"><a class="btn" href="contact.html">Ask About This Product</a><button class="btn secondary" type="button" id="closeDetailsBottom">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal media-modal" id="mediaModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mediaTitle">
+    <button class="modal-close" id="closeMedia" aria-label="Close image and video">✕</button>
+    <div class="modal-hero"><h3 id="mediaTitle"></h3></div>
+    <div class="modal-content">
+      <div class="media-slider-wrap">
+        <div class="media-slider">
+          <button class="slider-btn prev" type="button" id="prevSlide">‹</button>
+          <div class="media-slide active" id="imageSlide"><img id="modalImage" src="" alt="Product image"></div>
+          <div class="media-slide" id="videoSlide"><div id="modalVideoBox"></div></div>
+          <button class="slider-btn next" type="button" id="nextSlide">›</button>
+        </div>
+        <div class="slider-dots"><button class="slider-dot active" type="button" data-slide="0"></button><button class="slider-dot" type="button" data-slide="1"></button></div>
+        <div class="slide-label" id="slideLabel">Product Image</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="footer-container">
+  <div class="footer-box"><h3>WITHX INNOVATIONS</h3>
+    <p>WITHX Innovations Private Limited is an engineering-driven company focused on research & development, manufacturing solutions, industrial design, product innovation and advanced technology development.</p>
+  </div>
+  <div class="footer-box"><h4>Quick Links</h4>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="contact.html">Contact</a>
+    </div></div>
+  <div class="footer-box"><h4>Contact</h4>
+    <div class="footer-contact">
+      <span>📍 EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span><span>🏢 WITHX Innovations Pvt. Ltd.</span>
+      <a href="mailto:withx.innovations@gmail.com">✉ withx.innovations@gmail.com</a>
+      <div class="social-links"><a class="linkedin" href="https://www.linkedin.com/company/withx-innovations/" target="_blank">LinkedIn</a>
+        <a class="instagram" href="https://www.instagram.com/withx.in" target="_blank">Instagram</a>
+        <a class="youtube" href="https://youtube.com/@withxinnovation" target="_blank">YouTube</a>
+      </div></div></div></div>
+  <div class="footer-bottom">© 2026 WITHX Innovations Private Limited. All Rights Reserved.</div>
+</footer>
+<script>
+const sections=document.querySelectorAll('.section');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})},{threshold:.12});sections.forEach(section=>observer.observe(section));
+const blobs=document.querySelectorAll('.parallax-blob');const heroInner=document.getElementById('heroInner');window.addEventListener('scroll',()=>{const y=window.scrollY;blobs.forEach((blob,index)=>{blob.style.transform=`translateY(${y*(.05+index*.02)}px)`});if(heroInner){heroInner.style.transform=`translateY(${y*.08}px)`}});
+function addTiltEffect(element){element.addEventListener('mousemove',(event)=>{const rect=element.getBoundingClientRect();const x=event.clientX-rect.left;const y=event.clientY-rect.top;const rotateX=((y/rect.height)-.5)*-5;const rotateY=((x/rect.width)-.5)*5;element.style.transform=`perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`});element.addEventListener('mouseleave',()=>{element.style.transform=''})}document.querySelectorAll('.product-card').forEach(addTiltEffect);
+const detailsModal=document.getElementById('detailsModal');
+const closeDetails=document.getElementById('closeDetails');
+const closeDetailsBottom=document.getElementById('closeDetailsBottom');
+const detailsTitle=document.getElementById('detailsTitle');
+const detailsDesc=document.getElementById('detailsDesc');
+const detailsProblem=document.getElementById('detailsProblem');
+const detailsSolution=document.getElementById('detailsSolution');
+const detailsCustomers=document.getElementById('detailsCustomers');
+const detailsFeatures=document.getElementById('detailsFeatures');
+const mediaModal=document.getElementById('mediaModal');
+const closeMedia=document.getElementById('closeMedia');
+const mediaTitle=document.getElementById('mediaTitle');
+const modalImage=document.getElementById('modalImage');
+const modalVideoBox=document.getElementById('modalVideoBox');
+const imageSlide=document.getElementById('imageSlide');
+const videoSlide=document.getElementById('videoSlide');
+const prevSlide=document.getElementById('prevSlide');
+const nextSlide=document.getElementById('nextSlide');
+const slideDots=document.querySelectorAll('.slider-dot');
+const slideLabel=document.getElementById('slideLabel');
+let currentSlide=0;
+function showSlide(index){
+  currentSlide=index;
+  imageSlide.classList.toggle('active',index===0);
+  videoSlide.classList.toggle('active',index===1);
+  slideDots.forEach((dot,i)=>dot.classList.toggle('active',i===index));
+  slideLabel.textContent=index===0?'Product Image':'Product Video';
+
+  const video=modalVideoBox.querySelector('video');
+  if(video && index===0){
+    video.pause();
+  }
+  if(video && index===1){
+    video.load();
+    video.play().catch(()=>{});
+  }
+}
+
+function fillVideo(button){
+  const videoSrc=(button.dataset.video||'').trim();
+  modalVideoBox.innerHTML='';
+
+  if(!videoSrc){
+    modalVideoBox.innerHTML='<div class="modal-video-placeholder"><div><b>Product Video</b><span>Add video link in data-video to show video here.</span></div></div>';
+    return;
+  }
+
+  const box=document.createElement('div');
+  box.style.width='100%';
+  box.style.height='100%';
+  box.style.position='relative';
+
+  const video=document.createElement('video');
+  video.controls=true;
+  video.preload='auto';
+  video.playsInline=true;
+  video.muted=false;
+  video.poster=button.dataset.image||'';
+  video.setAttribute('playsinline','');
+  video.setAttribute('webkit-playsinline','');
+  video.setAttribute('controlsList','nodownload');
+  video.style.width='100%';
+  video.style.height='100%';
+  video.style.objectFit='contain';
+  video.style.background='#0f172a';
+  video.style.borderRadius='20px';
+
+  /* Direct src is more reliable for Cloudinary MP4 links than dynamic <source> replacement */
+  video.src=videoSrc;
+
+  video.addEventListener('loadedmetadata',()=>{
+    console.log('Video loaded:', videoSrc);
+  });
+
+  video.addEventListener('error',()=>{
+    box.innerHTML=`<div class="modal-video-placeholder"><div><b>Video could not load in preview</b><span>Click below to open the video directly.</span><br><br><a class="btn" href="${videoSrc}" target="_blank" rel="noopener">Open Video</a></div></div>`;
+  });
+
+  box.appendChild(video);
+  modalVideoBox.appendChild(box);
+  video.load();
+}
+function openDetailsModal(button){detailsTitle.textContent=button.dataset.product;detailsDesc.textContent=button.dataset.desc;detailsProblem.textContent=button.dataset.problem;detailsSolution.textContent=button.dataset.solution;detailsCustomers.textContent=button.dataset.customers;detailsFeatures.innerHTML='';button.dataset.features.split('|').forEach(feature=>{const item=document.createElement('span');item.textContent=feature;detailsFeatures.appendChild(item)});detailsModal.classList.add('open');document.body.classList.add('modal-active');detailsModal.setAttribute('aria-hidden','false')}
+function openMediaModal(button){mediaTitle.textContent=button.dataset.product;modalImage.src=button.dataset.image||'';modalImage.alt=button.dataset.product+' image';fillVideo(button);showSlide(0);mediaModal.classList.add('open');document.body.classList.add('modal-active');mediaModal.setAttribute('aria-hidden','false')}
+function closeDetailsModal(){detailsModal.classList.remove('open');document.body.classList.remove('modal-active');detailsModal.setAttribute('aria-hidden','true')}
+function closeMediaModal(){mediaModal.classList.remove('open');document.body.classList.remove('modal-active');mediaModal.setAttribute('aria-hidden','true');const video=modalVideoBox.querySelector('video');if(video){video.pause()}}
+if(prevSlide){prevSlide.addEventListener('click',()=>showSlide(currentSlide===0?1:0))}if(nextSlide){nextSlide.addEventListener('click',()=>showSlide(currentSlide===0?1:0))}slideDots.forEach(dot=>dot.addEventListener('click',()=>showSlide(Number(dot.dataset.slide))))
+document.querySelectorAll('[data-product]').forEach(button=>{button.addEventListener('click',(event)=>{event.stopPropagation();openDetailsModal(button)});const card=button.closest('.product-card');if(card){const media=card.querySelector('.product-media');if(media){media.addEventListener('click',(event)=>{event.stopPropagation();openMediaModal(button)})}card.addEventListener('keydown',(event)=>{if(event.key==='Enter'){openDetailsModal(button)}})}});closeDetails.addEventListener('click',closeDetailsModal);if(closeDetailsBottom){closeDetailsBottom.addEventListener('click',closeDetailsModal)}closeMedia.addEventListener('click',closeMediaModal);detailsModal.addEventListener('click',(event)=>{if(event.target===detailsModal){closeDetailsModal()}});mediaModal.addEventListener('click',(event)=>{if(event.target===mediaModal){closeMediaModal()}});document.addEventListener('keydown',(event)=>{if(event.key==='Escape'){if(detailsModal.classList.contains('open')) closeDetailsModal();if(mediaModal.classList.contains('open')) closeMediaModal();}});
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+if(menuBtn && mobileMenu){
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('show'));
+  document.querySelectorAll('#mobileMenu a').forEach((link)=>link.addEventListener('click',()=>mobileMenu.classList.remove('show')));
+}
+</script>
+<script>
+// WITHX Premium Blue-Gold Particle Ribbon Wave (Small)
+(function(){
+  const canvas = document.getElementById("productsWaveCanvas");
+  if(!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let w, h, t = 0;
+
+  function resize(){
+    w = canvas.width = 380;
+    h = canvas.height = 120;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  function ribbon(color1, color2, phase, amp, thick, yShift){
+    const top = [];
+    const bottom = [];
+
+    for(let x = -20; x <= w + 20; x += 4){
+      const y = h / 2 + yShift +
+        Math.sin(x * 0.006 + t + phase) * (amp * 0.4) +
+        Math.sin(x * 0.013 + t * 0.7) * (22 * 0.4);
+
+      top.push({x, y});
+      bottom.push({
+        x,
+        y: y + (thick * 0.4) * Math.cos(x * 0.004 + t + phase)
+      });
+    }
+
+    ctx.beginPath();
+    top.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+    bottom.reverse().forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.closePath();
+
+    const grad = ctx.createLinearGradient(0, 0, w, 0);
+    grad.addColorStop(0, color1);
+    grad.addColorStop(0.35, color2);
+    grad.addColorStop(0.55, "rgba(255,255,255,0.45)");
+    grad.addColorStop(0.75, color2);
+    grad.addColorStop(1, color1);
+
+    ctx.fillStyle = grad;
+    ctx.fill();
+  }
+
+  function grain(){
+    for(let i = 0; i < 3000; i++){
+      ctx.fillStyle = Math.random() > 0.5 ? "rgba(255,255,255,0.26)" : "rgba(255,255,255,0.12)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 1, 1);
+    }
+  }
+
+  function animate(){
+    ctx.clearRect(0, 0, w, h);
+
+    ribbon("rgba(79,141,255,0.05)", "rgba(79,141,255,0.78)", 0, 55, 95, 0);
+    ribbon("rgba(255,215,106,0.05)", "rgba(255,195,65,0.72)", Math.PI, 48, 85, 6);
+
+    grain();
+    t += 0.01;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+</script>
+</body>
+</html>
