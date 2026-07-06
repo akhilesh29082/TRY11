@@ -88,28 +88,7 @@ body::before{
   backdrop-filter:blur(20px);
   animation:fadeInUp .9s ease forwards;
 }
-.hero-copy::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:6px;
-  height:100%;
-  border-radius:0 18px 18px 0;
-  background:linear-gradient(180deg, rgba(56,189,248,.95), rgba(14,165,233,.35));
-}
 .hero-copy>*{position:relative;}
-.hero-kicker{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  background:rgba(56,189,248,.12);
-  border:1px solid rgba(56,189,248,.22);
-  color:#0369a1;
-  font-size:.82rem;
-  font-weight:600;
-  margin-bottom:18px;
-}
 .hero h1{
   font-size:clamp(3rem,6vw,5.2rem);
   line-height:1.02;
@@ -301,10 +280,15 @@ section.show .cta-panel{opacity:1;transform:translateY(0);transition-delay:.22s;
   place-items:center;
   border-radius:18px;
   background:rgba(56,189,248,.22);
-  color:#ffffff;
-  font-size:1.6rem;
+  color:var(--primary);
   margin-bottom:18px;
 }
+.summary-card-icon svg{width:26px;height:26px;stroke:var(--primary);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.summary-card{padding:0 0 26px;overflow:hidden;}
+.summary-card-header{margin-bottom:0;}
+.summary-card-header img{width:100%;height:200px;object-fit:cover;display:block;border-radius:0;box-shadow:none;border:none;margin-bottom:20px;}
+.summary-card-header h4{margin:0 24px 0;}
+.summary-card p{margin:0 24px;}
 
 .service-area-grid{
   display:grid;
@@ -328,6 +312,25 @@ section.show .cta-panel{opacity:1;transform:translateY(0);transition-delay:.22s;
 
 .service-area-grid .service-card img{
   height:240px;
+}
+
+/* Make the images fill the full width/top of the card (edge-to-edge), no gap/border around them */
+.service-area-grid .service-card.premium{
+  padding:0 0 28px;
+  overflow:hidden;
+}
+.service-area-grid .service-card.premium img{
+  width:100%;
+  height:260px;
+  margin:0 0 24px;
+  border:none;
+  border-radius:0;
+  display:block;
+}
+.service-area-grid .service-card.premium h3,
+.service-area-grid .service-card.premium p{
+  margin-left:28px;
+  margin-right:28px;
 }
 
 .process-cards{
@@ -500,7 +503,13 @@ justify-self:center;
   animation:cardFloat 20s ease-in-out infinite;
 }
 .highlight-card:hover{transform:translateY(-8px);border-color:rgba(56,189,248,.32);}
-.highlight-card .icon{font-size:2.1rem;margin-bottom:12px}
+.highlight-card .icon{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:rgba(56,189,248,.16);margin-bottom:16px;color:var(--primary)}
+.highlight-card .icon svg{width:24px;height:24px;stroke:var(--primary);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.highlight-card{padding:0 0 26px;overflow:hidden;}
+.highlight-card-header{margin-bottom:0;}
+.highlight-card-header img{width:100%;height:200px;object-fit:cover;display:block;border-radius:0;box-shadow:none;border:none;margin-bottom:20px;}
+.highlight-card-header h4{margin:0 24px 0;}
+.highlight-card p{margin:0 24px;}
 .highlight-card h4{color:var(--primary);margin-bottom:10px;font-size:1.1rem}
 .highlight-card p{color:var(--muted);line-height:1.75}
 
@@ -708,14 +717,13 @@ justify-self:center;
 <section class="hero show">
   <div class="hero-grid">
     <div class="hero-copy glass">
-      <div class="hero-kicker">WITHX Services</div>
       <h1>Engineering services shaped for real-world execution.</h1>
       <p>Our services combine innovation, technical depth, and practical problem solving to support products, prototypes, and engineering systems that create measurable impact.</p>
     </div>
 
     <div class="hero-visual">
       <div class="hero-frame glass">
-        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80" alt="Engineering and development workspace">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=90" alt="Engineering and development workspace">
       </div>
       <div class="float-card top">
         <small>Built around</small>
@@ -736,18 +744,24 @@ justify-self:center;
   </div>
   <div class="service-summary-grid">
     <div class="summary-card">
-      <div class="summary-card-icon">🏭</div>
-      <h4>Manufacturing</h4>
+      <div class="summary-card-header">
+        <img src="https://images.unsplash.com/photo-1631376178637-392efc9e356b?auto=format&fit=crop&w=1600&q=90" alt="Manufacturing">
+        <h4>Manufacturing</h4>
+      </div>
       <p>Systems and solution thinking rooted in practical implementation.</p>
     </div>
     <div class="summary-card">
-      <div class="summary-card-icon">🔬</div>
-      <h4>Research</h4>
+      <div class="summary-card-header">
+        <img src="https://images.unsplash.com/photo-1610940511855-1c4de5068595?auto=format&fit=crop&w=1600&q=90" alt="Research">
+        <h4>Research</h4>
+      </div>
       <p>Innovation supported by exploration, testing, and technical learning.</p>
     </div>
     <div class="summary-card">
-      <div class="summary-card-icon">🛠️</div>
-      <h4>Design</h4>
+      <div class="summary-card-header">
+        <img src="https://images.unsplash.com/photo-1658248165127-f880b5a74e98?auto=format&fit=crop&w=1600&q=90" alt="Design">
+        <h4>Design</h4>
+      </div>
       <p>Engineering ideas translated into useful and purposeful products.</p>
     </div>
   </div>
@@ -760,17 +774,17 @@ justify-self:center;
   </div>
   <div class="service-area-grid">
     <div class="service-card premium glass">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="Research and development">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=90" alt="Research and development">
       <h3>Research & Development</h3>
       <p>Our research and development service focuses on experimentation, concept refinement, and technical exploration. It supports the discovery of innovative directions and helps shape raw ideas into more structured and feasible engineering opportunities.</p>
     </div>
     <div class="service-card premium glass">
-      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80" alt="Manufacturing solutions">
+      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=90" alt="Manufacturing solutions">
       <h3>Manufacturing Solutions</h3>
       <p>WITHX develops manufacturing-focused engineering solutions that aim to improve usability, productivity, and system-level efficiency. This service is centered on creating practical approaches that support smoother workflows, better operational logic, and stronger real-world implementation value.</p>
     </div>
     <div class="service-card premium glass">
-      <img src="https://images.unsplash.com/photo-1581091012184-5c0b96d66d04?auto=format&fit=crop&w=1600&q=80" alt="Prototype development">
+      <img src="https://images.unsplash.com/photo-1640955785023-1854685dae05?auto=format&fit=crop&w=1600&q=90" alt="Prototype development">
       <h3>Prototype Development</h3>
       <p>WITHX transforms concepts into working prototype models that help validate ideas, test performance, and improve design confidence. This service supports the journey from concept stage to tangible engineering output.</p>
     </div>
@@ -803,23 +817,31 @@ justify-self:center;
 <section>
   <div class="highlight-grid">
       <div class="highlight-card glass">
-        <div class="icon">📐</div>
-        <h4>Industrial Design</h4>
+        <div class="highlight-card-header">
+          <img src="https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?auto=format&fit=crop&w=1600&q=90" alt="Industrial Design">
+          <h4>Industrial Design</h4>
+        </div>
         <p>WITHX creates product and system designs that balance function, clarity, engineering logic, and user relevance. Industrial design is approached not only as appearance, but as a purposeful part of how a solution performs and is experienced.</p>
       </div>
       <div class="highlight-card glass">
-        <div class="icon">⚙️</div>
-        <h4>Execution-Led Thinking</h4>
+        <div class="highlight-card-header">
+          <img src="https://images.unsplash.com/photo-1610940511855-1c4de5068595?auto=format&fit=crop&w=1600&q=90" alt="Execution-Led Thinking">
+          <h4>Execution-Led Thinking</h4>
+        </div>
         <p>Services are shaped around practicality, so concepts move closer to usable engineering results instead of remaining theoretical.</p>
       </div>
       <div class="highlight-card glass">
-        <div class="icon">🔬</div>
-        <h4>Innovation Support</h4>
+        <div class="highlight-card-header">
+          <img src="https://images.unsplash.com/photo-1631376178637-392efc9e356b?auto=format&fit=crop&w=1600&q=90" alt="Innovation Support">
+          <h4>Innovation Support</h4>
+        </div>
         <p>Research-driven service flow helps strengthen creativity with structure, testing, and technical reasoning.</p>
       </div>
       <div class="highlight-card glass">
-        <div class="icon">🚀</div>
-        <h4>Real-World Relevance</h4>
+        <div class="highlight-card-header">
+          <img src="https://images.unsplash.com/photo-1716194583732-0b9874234218?auto=format&fit=crop&w=1600&q=90" alt="Real-World Relevance">
+          <h4>Real-World Relevance</h4>
+        </div>
         <p>Every service is aligned with the goal of creating outcomes that matter in practical engineering contexts.</p>
       </div>
     </div>
