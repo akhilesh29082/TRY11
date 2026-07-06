@@ -54,6 +54,18 @@ img{max-width:100%;display:block}
 .mobile-menu{position:fixed;top:88px;left:0;width:100%;background:#0b0d10;display:none;flex-direction:column;z-index:5000}
 .mobile-menu a{padding:18px 24px;text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600}
 .mobile-menu.show{display:flex}
+.patent-section{
+    background: #ECF8FD  ;   /* Light blue */
+    padding: 10px 0;
+    width: 100%;
+}
+
+.patent-section .container{
+    max-width: 1200px;
+    margin: auto auto;
+    padding: 0 20px;
+}
+
 
 /* ============ BUTTONS (homepage system: black pill) ============ */
 .btn{
@@ -69,17 +81,36 @@ img{max-width:100%;display:block}
 .btn.small{padding:12px 22px;font-size:.85rem}
 
 /* ============ SCROLL REVEAL ============ */
-.section{padding:110px 8%;opacity:0;transform:translateY(45px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+.section{padding:40px 8%;opacity:0;transform:translateY(45px);transition:.9s cubic-bezier(.2,.7,.2,1)}
 .section.show{opacity:1;transform:translateY(0)}
 .section-head{max-width:760px;margin:0 auto 56px}
 .section-head.left{margin:0 0 56px}
 .kicker{display:inline-flex;padding:9px 20px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--panel-border);color:var(--primary);font-size:.78rem;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:18px}
+.kicker1{
+    display: inline-flex;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid var(--panel-border);
+    color: var(--primary);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
 .title{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px;line-height:1.12}
 .lead{color:var(--muted);line-height:1.9;font-size:1.08rem}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
-/* ============ HERO (premium, homepage floating-shape language) ============ */
-.hero{background:var(--bg-soft);padding:190px 20px 130px;position:relative;overflow:hidden;text-align:center}
+/* ============ HERO (premium, homepage floating-shape language) ============ */.hero{
+    background: #ECF8FD;
+    padding: 140px 20px 130px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
 .hero-inner{max-width:940px;margin:0 auto;position:relative;z-index:2;animation:fadeUp 1s cubic-bezier(.2,.8,.2,1) forwards}
 .hero-kicker{display:inline-flex;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid var(--panel-border);font-size:.8rem;font-weight:800;letter-spacing:2px;color:var(--primary);margin-bottom:26px}
 .hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem);line-height:1.06;font-weight:800;margin-bottom:26px}
@@ -100,31 +131,118 @@ img{max-width:100%;display:block}
 @keyframes floatShape{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
 
 /* ============ PRODUCT GRID / CARDS ============ */
-.products-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:36px}
-.product-card{background:#fff;border:1px solid var(--panel-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);transition:.45s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;will-change:transform;position:relative}
-.product-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-hover)}
-.product-top{background:linear-gradient(135deg,#f8fbff,var(--bg-soft))}
-.product-media{min-height:380px;display:flex;align-items:center;justify-content:center;padding:30px;position:relative;border-bottom:1px solid var(--panel-border);background:linear-gradient(135deg,#ffffff,var(--bg-soft));cursor:pointer}
-.product-media::after{content:'Click image to view';position:absolute;left:20px;bottom:20px;padding:9px 14px;border-radius:999px;background:rgba(10,25,47,.78);color:#fff;font-size:.76rem;font-weight:800;backdrop-filter:blur(10px);opacity:0;transform:translateY(8px);transition:.3s}
-.product-card:hover .product-media::after{opacity:1;transform:translateY(0)}
-.product-media img{width:100%;height:340px;object-fit:contain;object-position:center;border-radius:20px;transition:.5s cubic-bezier(.2,.8,.2,1);background:#fff}
-.product-card:hover .product-media img{transform:scale(1.05)}
-.product-body{padding:36px;display:flex;flex-direction:column;min-height:340px}
-.product-tagline{display:inline-flex;width:max-content;margin-bottom:16px;padding:8px 14px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--panel-border);color:var(--primary);font-size:.8rem;font-weight:800}
-.product-body h3{font-size:1.6rem;margin-bottom:14px}
-.product-body p{color:var(--muted);line-height:1.85;margin-bottom:20px;font-size:.98rem}
-.feature-list{display:grid;gap:11px;margin:4px 0 26px}
-.feature-list span{color:#334155;font-size:.95rem;padding-left:30px;position:relative;line-height:1.5}
-.feature-list span::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--bg-soft);color:var(--primary);font-size:.72rem;font-weight:900}
-.product-body .btn{margin-top:auto}
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:36px;
+    margin-top:36px;
+}
 
-/* ============ WHY CHOOSE / FEATURE GRID ============ */
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:10px}
-.why-card{background:#fff;border:1px solid var(--panel-border);border-radius:var(--radius-md);padding:34px 28px;box-shadow:var(--shadow-soft);transition:.4s}
-.why-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
-.why-icon{width:52px;height:52px;border-radius:16px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px}
-.why-card h4{font-size:1.15rem;margin-bottom:10px}
-.why-card p{color:var(--muted);line-height:1.75;font-size:.94rem}
+.product-card{
+    background:#ECF8FD;
+    border:1px solid #cfeaf7;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+    transition:.45s cubic-bezier(.2,.8,.2,1);
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow-hover);
+}
+
+.product-media{
+    height:320px;
+    padding:0;                 /* Remove all spacing */
+    display:flex;
+    align-items:flex-start;    /* Keep image at top */
+    justify-content:center;
+    overflow:hidden;
+    background:#fff;
+    border-bottom:none;
+    position:relative;
+    cursor:pointer;
+}
+
+.product-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;          /* Fill entire top area */
+    object-position:center top;
+    border-radius:0;           /* No rounded corners on image */
+    display:block;
+    transition:.45s;
+    background:none;
+}
+
+.product-card:hover .product-media img{
+    transform:scale(1.05);
+}
+
+.product-body{
+    background:#ECF8FD;
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+}
+
+.product-tagline{
+    display: inline-flex;
+    width: max-content;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #FFFFFF;   /* White background */
+    border: 1px solid #a7ddff;
+    color: var(--primary);
+    font-size: .8rem;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Optional: subtle shadow */
+}
+
+.product-body h3{
+    font-size:1.7rem;
+    margin-bottom:14px;
+}
+
+.product-body p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.feature-list{
+    display:grid;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+.feature-list span{
+    position:relative;
+    padding-left:30px;
+}
+
+.feature-list span::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:2px;
+    width:20px;
+    height:20px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#d9f2ff;
+    color:var(--primary);
+    font-size:.72rem;
+    font-weight:700;
+}
+
+.product-body .btn{
+    margin-top:auto;
+}
 
 /* ============ INDUSTRIES ============ */
 .industries-section{background:var(--bg-soft)}
@@ -166,7 +284,7 @@ img{max-width:100%;display:block}
 .faq-answer p{color:var(--muted);line-height:1.8;font-size:.95rem}
 
 /* ============ PREMIUM CTA ============ */
-.cta-section{padding:0 8% 110px}
+.cta-section{padding:40px 8% 110px}
 .cta-panel{background:#0A192F;border-radius:36px;padding:90px 60px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 40px 90px rgba(10,25,47,.3)}
 .cta-panel::before{content:'';position:absolute;width:320px;height:320px;background:rgba(255,255,255,.06);border-radius:50%;left:-100px;top:-120px}
 .cta-panel::after{content:'';position:absolute;width:260px;height:260px;background:rgba(255,255,255,.05);border-radius:50%;right:-80px;bottom:-100px}
@@ -236,7 +354,6 @@ body.modal-active{overflow:hidden}
 @media(max-width:1100px){
   .products-grid{grid-template-columns:1fr}
   .modal-grid,.modal-list{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:repeat(2,1fr)}
   .industries-grid{grid-template-columns:repeat(2,1fr)}
   .process-track{grid-template-columns:repeat(4,1fr);row-gap:34px}
   .process-track::before{display:none}
@@ -262,7 +379,7 @@ body.modal-active{overflow:hidden}
   .modal-hero,.modal-content{padding:28px 22px}
   .modal-hero{border-radius:22px 22px 0 0}
   .hero h1{font-size:2.4rem}
-  .why-grid,.industries-grid{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:1fr}
   .process-track{grid-template-columns:repeat(2,1fr)}
   .cta-panel{padding:60px 28px}
 }
@@ -366,27 +483,11 @@ body.modal-active{overflow:hidden}
   </div>
 </section>
 
-<!-- ================= WHY CHOOSE WITHX ================= -->
-<section class="section">
-  <div class="section-head center">
-    <span class="kicker">Why Choose WITHX</span>
-    <h2 class="title">Engineering Discipline, Built In</h2>
-    <p class="lead">Every product that leaves our lab has been through the same rigor: prototyped, tested, and validated for real conditions before it reaches a customer.</p>
-  </div>
-  <div class="why-grid">
-    <div class="why-card"><h4>Engineering Excellence</h4><p>Every product is designed by an in-house engineering team with hands-on manufacturing experience, not just CAD drawings.</p></div>
-    <div class="why-card"><h4>Patent-Driven Innovation</h4><p>Four active patent applications protect the core mechanisms behind our products, ensuring genuine, defensible innovation.</p></div>
-    <div class="why-card"><h4>Rapid Prototyping</h4><p>In-house prototyping capability lets us move from concept to working model in weeks, not quarters.</p></div>
-    <div class="why-card"><h4>Manufacturing Ready</h4><p>Products are designed with production and supply chains in mind, so they scale from a single unit to bulk orders without redesign.</p></div>
-    <div class="why-card"><h4>Sustainable Engineering</h4><p>Material selection and energy use are evaluated at the design stage to minimise waste and long-term environmental impact.</p></div>
-    <div class="why-card"><h4>Client-Centric Design</h4><p>Every solution starts with a real customer problem, refined through direct feedback before it becomes a finished product.</p></div>
-  </div>
-</section>
 
 <!-- ================= INDUSTRIES WE SERVE ================= -->
 <section class="section industries-section">
   <div class="section-head center">
-    <span class="kicker">Industries We Serve</span>
+    <span class="kicker1">Industries We Serve</span>
     <h2 class="title">Built for Sectors That Demand Reliability</h2>
     <p class="lead">Our engineering approach adapts to the standards, constraints, and use-cases of each sector we work with.</p>
   </div>
@@ -421,10 +522,11 @@ body.modal-active{overflow:hidden}
 </section>
 
 <!-- ================= INNOVATION PHILOSOPHY ================= -->
+ <section class="patent-section">
 <section class="section">
   <div class="philosophy-wrap">
     <div>
-      <span class="kicker">Innovation Philosophy</span>
+      <span class="kicker1">Innovation Philosophy</span>
       <h2 class="title">We Engineer for the Problem, Not the Trend</h2>
       <p class="lead">WITHX was built on the belief that good engineering starts with a real, observed problem — not a technology looking for a use case. That discipline shapes every product we bring to market.</p>
       <div class="philosophy-list">
@@ -439,7 +541,7 @@ body.modal-active{overflow:hidden}
       <h3>"Every product we build begins with a problem worth solving — and ends with a solution built to last."</h3>
     </div>
   </div>
-</section>
+</section></section>
 
 <!-- ================= FAQ ================= -->
 
