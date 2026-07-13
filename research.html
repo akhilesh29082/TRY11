@@ -78,8 +78,8 @@ body::before{
     align-items: center;
     justify-content: space-between;
     padding: 0 36px;           /* Reduced from 48px */
-    background: #0b0d10;
-    color: #fff;
+    background:#ffffff;
+    color:#111;
     z-index: 3000;
 }
   .nav-left,
@@ -116,14 +116,22 @@ body::before{
 }
 
 .top-navbar a{
-    color: #fff;
+    color:#111;
     text-decoration: none;
     font-size: 15px;   /* was 16px */
     font-weight: 600;
 }
         
-        .top-navbar a:hover,
-        .top-navbar a.active{color:#38bdf8}
+        .top-navbar a:hover{
+    color:#111;
+    border-bottom:none;
+    padding-bottom:0;
+}
+.top-navbar a.active{
+    color:#111;
+    border-bottom:none;
+    padding-bottom:0;
+}
        .ask-btn{
     padding: 10px 20px;   /* was 14px 26px */
     border: 1px solid #8b5cf6;
@@ -505,7 +513,7 @@ section.show{opacity:1;transform:translateY(0)}
 
 .footer-links a:hover,
 .footer-contact a:hover{
-  color:#38bdf8;
+  color:#111;
   transform:translateX(4px);
 }
 
@@ -631,10 +639,10 @@ section.show{opacity:1;transform:translateY(0)}
     ><a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="products.html" class="active">Products</a>
+    <a href="products.html">Products</a>
     <a href="research.html">Research</a>
     <a href="contact.html">Contact</a></div>
-  <div class="nav-right"><button id="menuBtn" class="menu-btn">☰</button><a class="ask-btn" href="contact.html">Ask WITHX</a></div>
+  <div class="nav-right"><button id="menuBtn" class="menu-btn">☰</button><a class="ask-btn" style="color:#fff !important;" href="contact.html">Ask WITHX</a></div>
 </nav>
 <div id="mobileMenu" class="mobile-menu">
   <a href="index.html">Home</a>
