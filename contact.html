@@ -1329,7 +1329,6 @@ background:var(--dark-blue)}
   grid-template-columns:1fr 1fr !important;
   gap:0 !important;
   overflow:hidden !important;
-  background:linear-gradient(135deg,#0A192F 0%,#12345A 100%) !important;
   border-radius:28px !important;
   border:none !important;
   box-shadow:0 18px 45px rgba(10,25,47,.22) !important;
@@ -1343,7 +1342,42 @@ background:var(--dark-blue)}
 }
 
 .merged-form{
-  border-right:1px solid rgba(255,255,255,.16) !important;
+  border-right:1px solid rgba(10,25,47,.10) !important;
+  background:#ffffff !important;
+}
+
+.merged-info{
+  background:#0A192F !important;
+}
+
+/* First box (form) — white theme overrides */
+.merged-form .card-heading h3,
+.merged-form .contact-card h3,
+.merged-form .contact-text{
+  color:var(--navy) !important;
+}
+
+.merged-form .heading-icon,
+.merged-form .icon-box{
+  background:rgba(10,25,47,.06) !important;
+  color:var(--navy) !important;
+}
+
+.merged-contact-card .merged-form input,
+.merged-contact-card .merged-form textarea{
+  background:#ffffff !important;
+  border:1px solid rgba(10,25,47,.18) !important;
+  color:var(--navy) !important;
+}
+
+.merged-contact-card .merged-form input::placeholder,
+.merged-contact-card .merged-form textarea::placeholder{
+  color:rgba(10,25,47,.45) !important;
+}
+
+.merged-form button{
+  background:var(--navy) !important;
+  color:#fff !important;
 }
 
 .merged-contact-card .card{
@@ -1424,7 +1458,7 @@ background:var(--dark-blue)}
 
   .merged-form{
     border-right:none !important;
-    border-bottom:1px solid rgba(255,255,255,.16) !important;
+    border-bottom:1px solid rgba(10,25,47,.10) !important;
   }
 
   .merged-form,
@@ -1783,6 +1817,7 @@ industrial design, product innovation and advanced technology development.
 <a href="about.html">About Us</a>
 <a href="services.html">Services</a>
 <a href="products.html">Products</a>
+<a href="projects.html">Projects</a>
 <a href="research.html">Research</a>
 <a href="contact.html">Contact</a>
 </div>
