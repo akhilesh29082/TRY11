@@ -1944,6 +1944,305 @@ display:none !important;
 .menu-btn{display:block}
 }
 </style>
+
+<style>
+/* Contact section cleanup: remove the large left/right background panels */
+.merged-contact-card{
+  overflow:visible !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.merged-form,
+.merged-info{
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.merged-form{border-right:none !important;}
+
+/* Accent the Send Message title */
+.merged-contact-card .merged-form .card-heading h3{
+  color:#E87F24 !important;
+}
+
+/* Right section is now on the light page background */
+.merged-contact-card .merged-info .card-heading h3,
+.merged-contact-card .merged-info .contact-text,
+.merged-contact-card .merged-info .contact-item h4,
+.merged-contact-card .merged-info .contact-item p,
+.merged-contact-card .merged-info .social-heading strong{
+  color:#0A192F !important;
+}
+.merged-contact-card .merged-info .heading-icon,
+.merged-contact-card .merged-info .icon-box{
+  background:rgba(10,25,47,.08) !important;
+  color:#0A192F !important;
+}
+.merged-contact-card .merged-info .contact-item{
+  border-bottom-color:rgba(10,25,47,.15) !important;
+}
+@media(max-width:900px){
+  .merged-form{border-bottom:none !important;}
+}
+</style>
+
+<style id="withx-contact-hard-fix">
+/* Isolated final contact design. These class names are intentionally unique. */
+.withx-contact-shell{
+  width:736px !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  overflow:hidden !important;
+  border-radius:16px !important;
+  background:#fff !important;
+  box-shadow:0 18px 42px rgba(10,25,47,.18) !important;
+  border:1px solid rgba(10,25,47,.08) !important;
+}
+
+.withx-form-panel,
+.withx-info-panel{
+  min-width:0 !important;
+  min-height:396px !important;
+  padding:31px 30px !important;
+  box-sizing:border-box !important;
+  position:relative !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-form-panel{background:#fff !important;}
+.withx-info-panel{
+  background:#0A192F !important;
+  color:#fff !important;
+}
+
+.withx-section-title{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  margin:0 0 29px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-title-icon,
+.withx-info-icon{
+  width:36px !important;
+  height:36px !important;
+  min-width:36px !important;
+  border-radius:50% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+}
+
+.withx-title-icon{
+  background:#F2F3F6 !important;
+  color:#0A192F !important;
+}
+
+.withx-dark-icon,
+.withx-info-icon{
+  background:rgba(255,255,255,.13) !important;
+  color:#fff !important;
+}
+
+.withx-title-icon svg,
+.withx-info-icon svg{
+  width:16px !important;
+  height:16px !important;
+  display:block !important;
+  stroke:currentColor !important;
+}
+
+.withx-send-title,
+.withx-info-title{
+  display:block !important;
+  margin:0 !important;
+  padding:0 !important;
+  font-family:"Times New Roman",Times,serif !important;
+  font-size:20px !important;
+  font-weight:400 !important;
+  line-height:1.1 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-send-title{color:#E87F24 !important;}
+.withx-info-title{color:#fff !important;}
+
+.withx-gold-line{
+  display:block !important;
+  width:38px !important;
+  height:2px !important;
+  margin-top:10px !important;
+  background:#D8B04C !important;
+}
+
+.withx-field{
+  display:block !important;
+  width:100% !important;
+  height:35px !important;
+  margin:0 0 10px !important;
+  padding:0 12px !important;
+  border:1px solid #C9D0DA !important;
+  border-radius:8px !important;
+  background:#fff !important;
+  color:#0A192F !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:12px !important;
+  box-shadow:none !important;
+  outline:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-message{
+  height:95px !important;
+  min-height:95px !important;
+  padding-top:11px !important;
+  resize:vertical !important;
+}
+
+.withx-field::placeholder{color:#8793A6 !important;}
+
+.withx-send-btn{
+  display:inline-block !important;
+  margin:11px 0 0 !important;
+  padding:8px 18px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:#000 !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:12px !important;
+  font-weight:700 !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-info-intro{
+  display:block !important;
+  margin:0 0 15px !important;
+  padding:0 !important;
+  color:#fff !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:12px !important;
+  line-height:1.55 !important;
+  font-weight:600 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-info-row{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:100% !important;
+  min-height:59px !important;
+  margin:0 !important;
+  padding:10px 0 11px !important;
+  border-bottom:1px solid rgba(255,255,255,.22) !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  position:static !important;
+}
+
+.withx-info-copy{
+  display:block !important;
+  min-width:0 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-info-copy h4{
+  display:block !important;
+  margin:0 0 3px !important;
+  padding:0 !important;
+  color:#fff !important;
+  font-family:"Times New Roman",Times,serif !important;
+  font-size:12px !important;
+  font-weight:400 !important;
+  line-height:1.25 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-info-copy p,
+.withx-info-copy a{
+  display:block !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:11px !important;
+  line-height:1.45 !important;
+  font-weight:600 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  -webkit-text-fill-color:#fff !important;
+}
+
+.withx-at{
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-weight:700 !important;
+  font-size:17px !important;
+}
+
+.withx-actions{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px !important;
+  width:100% !important;
+  margin:18px 0 0 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-actions a{
+  min-height:32px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  margin:0 !important;
+  padding:8px 10px !important;
+  border-radius:5px !important;
+  text-decoration:none !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.withx-call{
+  background:#fff !important;
+  color:#0A192F !important;
+}
+
+.withx-whatsapp{
+  background:#25D366 !important;
+  color:#fff !important;
+}
+
+@media(max-width:780px){
+  .withx-contact-shell{grid-template-columns:1fr !important;}
+  .withx-form-panel,.withx-info-panel{
+    min-height:auto !important;
+    padding:28px 24px !important;
+  }
+  .withx-actions{grid-template-columns:1fr !important;}
+}
+</style>
+
 </head>
 
 <body>
@@ -1977,100 +2276,106 @@ display:none !important;
 
   <div class="grid">
 
-  <div class="merged-contact-card">
-
-    <div class="merged-form">
-<div class="card">
-      <div class="card-heading">
-        <div class="heading-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path></svg></div>
+  
+  <div class="withx-contact-shell">
+    <section class="withx-form-panel">
+      <div class="withx-section-title">
+        <div class="withx-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+          </svg>
+        </div>
         <div>
-          <h3>Send Message</h3>
-          <div class="gold-line"></div>
+          <h3 class="withx-send-title">Send Message</h3>
+          <div class="withx-gold-line"></div>
         </div>
       </div>
 
-      <form id="contactForm" action="https://formsubmit.co/withx.innovations@gmail.com" method="POST" novalidate autocomplete="off">
+      <form id="contactForm" action="https://formsubmit.co/withx.innovations@gmail.com"
+            method="POST" novalidate autocomplete="off">
         <input type="hidden" name="_subject" value="New Message from WITHX Website">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <input type="text" name="name" placeholder="Your Name" required autocomplete="off">
-        <input type="email" name="email" placeholder="Your Email" required autocomplete="off">
-        <textarea name="message" placeholder="Your Message" required autocomplete="off"></textarea>
+        <input class="withx-field" type="text" name="name" placeholder="Your Name" required autocomplete="off">
+        <input class="withx-field" type="email" name="email" placeholder="Your Email" required autocomplete="off">
+        <textarea class="withx-field withx-message" name="message" placeholder="Your Message" required autocomplete="off"></textarea>
 
-        <button type="submit">Send Message</button>
+        <button class="withx-send-btn" type="submit">Send Message</button>
       </form>
-    </div>
-    </div>
+    </section>
 
-    <div class="merged-info">
-<div class="card contact-card">
+    <section class="withx-info-panel">
+      <div class="withx-section-title">
+        <div class="withx-title-icon withx-dark-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <circle cx="8.5" cy="10.5" r="2"></circle>
+            <path d="M5 17c0-2 1.5-3.5 3.5-3.5S12 15 12 17"></path>
+            <line x1="14.5" y1="9" x2="19" y2="9"></line>
+            <line x1="14.5" y1="13" x2="19" y2="13"></line>
+          </svg>
+        </div>
+        <div>
+          <h3 class="withx-info-title">Contact Information</h3>
+          <div class="withx-gold-line"></div>
+        </div>
+      </div>
 
-  <div class="card-heading">
-    <div class="heading-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8.5" cy="10.5" r="2"></circle><path d="M5 17c0-2 1.5-3.5 3.5-3.5S12 15 12 17"></path><line x1="14.5" y1="9" x2="19" y2="9"></line><line x1="14.5" y1="13" x2="19" y2="13"></line></svg></div>
-    <div>
-      <h3>Contact Information</h3>
-      <div class="gold-line"></div>
-    </div>
-  </div>
+      <p class="withx-info-intro">
+        We'd love to hear about your project, idea, or collaboration opportunity.
+      </p>
 
-  <p class="contact-text">
-    We'd love to hear about your project, idea, or collaboration opportunity.
-  </p>
+      <div class="withx-info-row">
+        <div class="withx-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="withx-info-copy">
+          <h4>Office Address</h4>
+          <p>EDF MITAoE, Dehu Phata,<br>Alandi (D), Pune, Maharashtra</p>
+        </div>
+      </div>
 
-  <div class="contact-item">
-    <div class="icon-box">
-<svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-    </div>
+      <div class="withx-info-row">
+        <div class="withx-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                     19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1
+                     4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0
+                     0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0
+                     0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path>
+          </svg>
+        </div>
+        <div class="withx-info-copy">
+          <h4>Phone</h4>
+          <p><a href="tel:+919067936323">+91 90679 36323</a></p>
+        </div>
+      </div>
 
-    <div>
-      <h4>Office Address</h4>
-      <p>EDF MITAoE, Dehu Phata,<br>
-      Alandi (D), Pune, Maharashtra</p>
-    </div>
-  </div>
+      <div class="withx-info-row">
+        <div class="withx-info-icon withx-at">@</div>
+        <div class="withx-info-copy">
+          <h4>Email</h4>
+          <p><a href="mailto:withx.innovations@gmail.com">withx.innovations@gmail.com</a></p>
+        </div>
+      </div>
 
-  <div class="contact-item">
-    <div class="icon-box">
-      <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
-    </div>
-
-    <div>
-      <h4>Phone</h4>
-      <p>+91 90679 36323</p>
-    </div>
-  </div>
-
-  <div class="contact-item">
-    <div class="icon-box">
-      <span class="at-symbol">@</span>
-    </div>
-
-    <div>
-      <h4>Email</h4>
-      <p>withx.innovations@gmail.com</p>
-    </div>
-  </div>
-
-  <div class="action-buttons">
-    <a href="tel:+919067936323" class="call-btn">
-      <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
-      Call Now
-    </a>
-
-    <a href="https://wa.me/919067936323"
-       class="whatsapp-btn"
-       target="_blank">
-
-       <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
-       WhatsApp
-    </a>
-  </div>
-
-
-</div>
-    </div>
-
+      <div class="withx-actions">
+        <a class="withx-call" href="tel:+919067936323">
+          <span>☎</span> Call Now
+        </a>
+        <a class="withx-whatsapp" href="https://wa.me/919067936323" target="_blank" rel="noopener">
+          <span>◉</span> WhatsApp
+        </a>
+      </div>
+    </section>
   </div>
 
 </div> <!-- grid -->
