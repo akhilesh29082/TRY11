@@ -597,24 +597,47 @@ justify-self:center;
 }
 .cta-panel h2{color:#ffffff;margin-bottom:14px;font-size:clamp(1.6rem,3vw,2.2rem);}
 .cta-panel p{color:rgba(236,248,253,.75);line-height:1.85;max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:22px}
-.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
-.btn{
-  padding:16px 28px;
-  border:none;
-  border-radius:18px;
-  background:#ffffff;
-  color:var(--dark-blue);
-  font-weight:700;
-  cursor:pointer;
-  transition:.3s ease, transform .3s ease, box-shadow .3s ease;
-  box-shadow:0 18px 30px rgba(0,0,0,.22);
+.hero-actions{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
 }
-.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 24px 45px rgba(0,0,0,.28);}
+
+.hero-actions .btn{
+    text-decoration: none !important;
+}
+
+.hero-actions .btn:hover,
+.hero-actions .btn:focus,
+.hero-actions .btn:active,
+.hero-actions .btn:visited{
+    text-decoration: none !important;
+}
+
+.btn{
+    padding: 16px 28px;
+    border: none;
+    border-radius: 18px;
+    background: #ffffff;
+    color: var(--dark-blue);
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s ease, transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 18px 30px rgba(0,0,0,.22);
+}
+
+.btn:hover{
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 24px 45px rgba(0,0,0,.28);
+}
+
 .btn.secondary{
-  background:transparent;
-  color:#ffffff;
-  border:1px solid rgba(255,255,255,.35);
-  box-shadow:none;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,.35);
+    box-shadow: none;
 }
 .footer{
   background:#0f172a;
