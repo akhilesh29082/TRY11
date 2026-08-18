@@ -2115,9 +2115,10 @@ display:none !important;
   margin:11px 0 0 !important;
   padding:8px 18px !important;
   border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  color:#000 !important;
+  border: radius 2px !important;
+  border: 1px solid #000 !important;
+  background:#0A192F !important;
+  color:#fff !important;
   font-family:Arial,Helvetica,sans-serif !important;
   font-size:12px !important;
   font-weight:700 !important;
@@ -2231,6 +2232,39 @@ display:none !important;
 .withx-whatsapp{
   background:#25D366 !important;
   color:#fff !important;
+}
+
+
+/* ===== CONTACT CARD SIZE + TYPOGRAPHY REFINEMENT ===== */
+.withx-contact-shell{
+  width:min(1180px, calc(100% - 40px)) !important;
+  grid-template-columns:1fr 1fr !important;
+  border-radius:20px !important;
+}
+.withx-form-panel,
+.withx-info-panel{
+  min-height:520px !important;
+  padding:42px 48px !important;
+}
+.withx-section-title{gap:16px !important;margin-bottom:34px !important;}
+.withx-title-icon{width:46px !important;height:46px !important;min-width:46px !important;}
+.withx-send-title,.withx-info-title{font-size:26px !important;line-height:1.15 !important;}
+.withx-gold-line{width:48px !important;margin-top:12px !important;}
+.withx-field{height:44px !important;margin-bottom:13px !important;padding:0 15px !important;font-family:Inter,'Segoe UI',sans-serif !important;font-size:14px !important;}
+.withx-message{height:120px !important;min-height:120px !important;padding-top:14px !important;}
+.withx-send-btn{margin-top:13px !important;padding:11px 24px !important;border:1px solid #0A192F !important;border-radius:8px !important;background:#0A192F !important;color:#fff !important;font-family:Inter,'Segoe UI',sans-serif !important;font-size:14px !important;}
+.withx-info-intro{margin-bottom:17px !important;font-family:Inter,'Segoe UI',sans-serif !important;font-size:14px !important;line-height:1.55 !important;}
+.withx-info-row{gap:14px !important;min-height:74px !important;padding:13px 0 !important;}
+.withx-info-icon{width:46px !important;height:46px !important;min-width:46px !important;}
+.withx-info-icon svg{width:20px !important;height:20px !important;}
+.withx-info-copy h4{font-size:15px !important;margin-bottom:4px !important;}
+.withx-info-copy p,.withx-info-copy a{font-family:Inter,'Segoe UI',sans-serif !important;font-size:13px !important;line-height:1.5 !important;}
+.withx-at{font-size:20px !important;}
+.withx-actions{gap:15px !important;margin-top:22px !important;}
+.withx-actions a{min-height:42px !important;padding:10px 14px !important;font-family:Inter,'Segoe UI',sans-serif !important;font-size:13px !important;border-radius:7px !important;}
+
+@media(max-width:1100px){
+  .withx-form-panel,.withx-info-panel{padding:38px 34px !important;}
 }
 
 @media(max-width:780px){
