@@ -2243,7 +2243,287 @@ max-width:none;
 .top-navbar .nav-links a:hover {
     color: #E87F24 !important;
 }
+/* =========================================================
+   FINAL NAVBAR OVERRIDE — SAME ON EVERY PAGE
+   ========================================================= */
 
+.top-navbar{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  width:100% !important;
+  height:80px !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  padding:0 32px !important;
+
+  background:#ffffff !important;
+  color:#000000 !important;
+
+  border:none !important;
+  border-radius:0 !important;
+  border-bottom:1px solid rgba(10,25,47,.06) !important;
+
+  box-shadow:0 2px 12px rgba(10,25,47,.06) !important;
+
+  transform:none !important;
+  z-index:3000 !important;
+}
+
+
+/* ---------- LEFT / RIGHT ---------- */
+
+.top-navbar .nav-left{
+  display:flex !important;
+  align-items:center !important;
+  gap:34px !important;
+  flex:0 0 auto !important;
+  z-index:2 !important;
+}
+
+.top-navbar .nav-right{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:20px !important;
+  margin-left:auto !important;
+  flex:0 0 auto !important;
+  z-index:2 !important;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.top-navbar .brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:14px !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+
+  color:#000000 !important;
+  text-decoration:none !important;
+}
+
+.top-navbar .brand-logo-box{
+  height:64px !important;
+  width:230px !important;
+  min-width:230px !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  box-sizing:border-box !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+
+  overflow:hidden !important;
+}
+
+.top-navbar .brand-logo-box img,
+.top-navbar .brand img{
+  height:100% !important;
+  width:auto !important;
+  max-width:100% !important;
+
+  display:block !important;
+
+  object-fit:contain !important;
+  object-position:left center !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+
+  animation:none !important;
+  transform:none !important;
+
+  filter:contrast(1.18) saturate(1.1) !important;
+}
+
+
+/* ---------- NAVIGATION LINKS ---------- */
+
+.top-navbar .nav-links{
+  position:absolute !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  transform:translate(-50%,-50%) !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:30px !important;
+
+  flex-wrap:nowrap !important;
+}
+
+.top-navbar .nav-links a{
+  font-family:var(--font-nav) !important;
+
+  color:#000000 !important;
+
+  text-decoration:none !important;
+
+  font-size:16px !important;
+  font-weight:400 !important;
+
+  line-height:1 !important;
+
+  opacity:1 !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease !important;
+}
+
+
+/* ACTIVE + HOVER */
+
+.top-navbar .nav-links a:hover,
+.top-navbar .nav-links a.active{
+  color:var(--orange) !important;
+}
+
+
+/* ---------- ASK WITHX BUTTON ---------- */
+
+.top-navbar .ask-btn{
+  padding:14px 26px !important;
+
+  border:1px solid var(--orange) !important;
+  border-radius:999px !important;
+
+  background:var(--dark-blue) !important;
+
+  color:#ffffff !important;
+
+  text-decoration:none !important;
+}
+
+.top-navbar .ask-btn:hover{
+  background:var(--orange) !important;
+  border-color:var(--orange) !important;
+
+  box-shadow:0 0 24px rgba(10,25,47,.35) !important;
+
+  transform:none !important;
+}
+
+
+/* ---------- MENU BUTTON ---------- */
+
+.top-navbar .menu-btn{
+  display:none !important;
+
+  background:none !important;
+  border:none !important;
+  box-shadow:none !important;
+
+  color:#000000 !important;
+
+  font-size:30px !important;
+
+  padding:0 !important;
+  margin:0 !important;
+}
+
+
+/* =========================================================
+   MOBILE — SAME ON EVERY PAGE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .top-navbar{
+    height:auto !important;
+
+    padding:14px 22px !important;
+
+    flex-direction:row !important;
+    align-items:center !important;
+  }
+
+  .top-navbar .nav-links,
+  .top-navbar .ask-btn{
+    display:none !important;
+  }
+
+  .top-navbar .menu-btn{
+    display:block !important;
+
+    background:none !important;
+    border:none !important;
+    box-shadow:none !important;
+
+    color:#000000 !important;
+
+    font-size:30px !important;
+
+    padding:0 !important;
+  }
+
+  .top-navbar .nav-left,
+  .top-navbar .nav-right{
+    display:flex !important;
+
+    flex-direction:row !important;
+    align-items:center !important;
+
+    gap:18px !important;
+  }
+
+  .top-navbar .brand-logo-box{
+    height:52px !important;
+
+    width:180px !important;
+    min-width:180px !important;
+  }
+
+  .top-navbar .brand-logo-box img,
+  .top-navbar .brand img{
+    height:100% !important;
+    width:auto !important;
+  }
+}
+
+
+/* ---------- PAGE OFFSET ---------- */
+
+html{
+  scroll-padding-top:80px !important;
+}
 </style>
 </head>
 <body class="preload-lock">
